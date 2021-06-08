@@ -1,19 +1,39 @@
 <div class="main-container row">
-  <div class="profile-column col-4">
-    <div class="profile-card">
-
+  <div class="profile-column col-2">
+    <div class="profile-card text-center">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/danilogcastro", class: "super-avatar" %>
+      <h3 class="full-name mt-3"><%= current_user.first_name %> <%= current_user.last_name %></h3>
+      <p class="username mb-3">@<%= current_user.username %></p>
+      <p class="description my-3">TODO: add description to user model</p>
     </div>
   </div>
   <div class="search-column">
-    <div class="search-container col-8">
-      <div class="search-bar">
-
+    <div class="search-container col-10">
+      <div class="search-bar d-flex">
+        <%= form_tag users_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a user"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
       </div>
       <div class="filters">
-
       </div>
       <div class="search-result">
-
+        <% @users.each do |user| %>
+          <div class="user-card text-center">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/danilogcastro", class: "avatar-large" %>
+            <h3 class="full-name mt-3"><%= user.first_name %> <%= user.last_name %></h3>
+            <p class="username mb-3">@<%= user.username %></p>
+            <div class="user-instruments">
+              <% user.instruments.each do |instrument| %>
+                <p><%= instrument.name %></p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
