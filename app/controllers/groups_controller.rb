@@ -5,8 +5,10 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    authorize @group
   end
 
   def create
+
   end
 end
