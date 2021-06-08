@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 centered">
+      <div class="form-list">
+        <%= simple_form_for @post do |f| %>
+        <div class="form-inputs">
+          <%= f.input :content, placeholder: "How do you sound like today?" %>
+        </div>
+        <div class="form-actions">
+          <%= f.submit "Jam!" %>
+        </div>
+        <% end %>  
+      </div>
+    </div>
+  </div>  
+</div>
