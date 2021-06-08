@@ -8,7 +8,23 @@ class GroupsController < ApplicationController
     authorize @group
   end
 
-  def create
+  def show
+  end
 
+  def create
+    @group = Group.new(group_params)
+    @user = current_user
+    @group.user = @user
+    if @group.save
+      redirect_to group_path(@group)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def group_params
+    params.require(:group).permit(:name)
   end
 end
