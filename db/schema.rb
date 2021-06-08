@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2021_06_08_181308) do
-
+ActiveRecord::Schema.define(version: 2021_06_08_185259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,10 +53,10 @@ ActiveRecord::Schema.define(version: 2021_06_08_181308) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_groups_on_users_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "instruments", force: :cascade do |t|
@@ -78,13 +76,13 @@ ActiveRecord::Schema.define(version: 2021_06_08_181308) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.bigint "groups_id", null: false
-    t.bigint "users_id", null: false
+    t.bigint "group_id", null: false
+    t.bigint "user_id", null: false
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["groups_id"], name: "index_posts_on_groups_id"
-    t.index ["users_id"], name: "index_posts_on_users_id"
+    t.index ["group_id"], name: "index_posts_on_group_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -98,12 +96,12 @@ ActiveRecord::Schema.define(version: 2021_06_08_181308) do
   end
 
   create_table "subscriptions", force: :cascade do |t|
-    t.bigint "groups_id", null: false
-    t.bigint "users_id", null: false
+    t.bigint "group_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["groups_id"], name: "index_subscriptions_on_groups_id"
-    t.index ["users_id"], name: "index_subscriptions_on_users_id"
+    t.index ["group_id"], name: "index_subscriptions_on_group_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -127,13 +125,13 @@ ActiveRecord::Schema.define(version: 2021_06_08_181308) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "chat_memberships", "chatrooms"
   add_foreign_key "chat_memberships", "users"
-  add_foreign_key "groups", "users", column: "users_id"
+  add_foreign_key "groups", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "posts", "groups", column: "groups_id"
-  add_foreign_key "posts", "users", column: "users_id"
+  add_foreign_key "posts", "groups"
+  add_foreign_key "posts", "users"
   add_foreign_key "skills", "instruments"
   add_foreign_key "skills", "users"
-  add_foreign_key "subscriptions", "groups", column: "groups_id"
-  add_foreign_key "subscriptions", "users", column: "users_id"
+  add_foreign_key "subscriptions", "groups"
+  add_foreign_key "subscriptions", "users"
 end
