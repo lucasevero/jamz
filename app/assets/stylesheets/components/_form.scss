@@ -2,12 +2,21 @@
   background-color: white;
   padding: 10px 20px;
   margin: 50px auto;
-  border-radius: 3px;
+  border-radius: 25px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.form-inputs {
+  margin: 12px 0;
+
+}
+
+.input-post {
+  border: none;
+  border-bottom: 1px solid lightgrey;
 }
 
 .form-actions {
   display: flex;
   justify-content: space-between;
-  
 }

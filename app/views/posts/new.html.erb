@@ -4,7 +4,7 @@
       <div class="form-list">
         <%= simple_form_for @post do |f| %>
         <div class="form-inputs">
-          <%= f.input :content, placeholder: "How do you sound like today?", label: false  %>
+          <%= f.input :content, input_html: { class: "input-post" }, placeholder: "How do you sound like today?", label: false %>
         </div>
         <div class="form-actions">
           <label class="btn btn-default btn-change-avatar">
@@ -13,7 +13,7 @@
               <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %>
             </span>
            </label>
-          <%= f.submit "Post", class: "btn-post" %>
+          <%= f.submit "post", class: "btn-post" %>
         </div>
         <% end %>  
       </div>

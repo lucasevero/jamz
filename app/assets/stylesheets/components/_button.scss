@@ -15,4 +15,11 @@
   font-weight: lighter;
   letter-spacing: 1.25px;
   font-family: 'Rock Salt', "cursive";
+  background-image: linear-gradient(to bottom, #A23E48 0%);
+  opacity: 1;
+  transition-property: background-image;
+  transition-duration: 4s;
+  &:hover {
+    background-image: linear-gradient(to bottom, #A23E48 0%, #A23E48 0.02%, #FF8520 237.14%);
+  }
 }
