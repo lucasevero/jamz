@@ -1,6 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $my-red;
+}
+
+.logo {
+  font-size: 28px;
+  font-family: 'Rock Salt', "cursive";
+  margin: 0;
+  padding-left: 24px;
 }
 
 .navbar-lewagon .navbar-collapse {
