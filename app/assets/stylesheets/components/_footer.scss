@@ -1,0 +1,25 @@
+.footer {
+  background-color: #A23E48;
+  color: $my-background;
+  a {
+    margin: 8px;
+  }
+  i {
+    font-size: 2rem;
+    color: $my-background;
+    opacity: 0.8;
+    &:hover {
+      opacity: 0.8;
+      color: $my-orange;
+    }
+  }
+
+  span {
+    color: $my-background;
+    opacity: 0.8;
+  }
+}
+
+.content {
+  padding: 24px 0;
+}
