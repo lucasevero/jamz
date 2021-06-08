@@ -5,3 +5,14 @@
   font-weight: bold;
   border-radius: 4px;
 }
+
+.btn-post {
+  padding: 8px 24px;
+  background-color: $my-red;
+  border-radius: 25px;
+  border: 1px solid $my-red;
+  color: white;
+  font-weight: lighter;
+  letter-spacing: 1.25px;
+  font-family: 'Rock Salt', "cursive";
+}
