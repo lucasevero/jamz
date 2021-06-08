@@ -17,6 +17,7 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     @user = current_user
     @group.user = @user
+    authorize @group
     if @group.save
       redirect_to group_path(@group)
     else

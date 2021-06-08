@@ -5,8 +5,8 @@ class GroupPolicy < ApplicationPolicy
     end
   end
 
-  def show
-    true
+  def show?
+    record.user == user
   end
 
   def new?
