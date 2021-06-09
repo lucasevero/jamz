@@ -21,28 +21,36 @@
           <% end %>
         </div>
       </div>
-
-      <div class="post-actions">
+      <div class="post-action">
         <ul class="list-inline">
-          <li class="inline-item">
+          <li class="list-inline-item">
             <%= link_to '#' do %>
-              <%= cl_image_tag 'like-icon.png', style: 'width: 0.8rem', remote: true %>
+              <%= cl_image_tag 'like-icon.png', class: 'post-icon', remote: true %>
             <% end %>
+            <span>
+              2,1k
+            </span>
           </li>
           <li class="list-inline-item">
             <%= link_to '#' do %>
-              <%= cl_image_tag 'comment-icon.png', style: 'width: 0.8rem', remote: true %>
+              <%= cl_image_tag 'comment-icon.png', class: 'post-icon', remote: true %>
             <% end %>
+            <span>
+              228
+            </span>
           </li>
           <li class="list-inline-item">
             <%= link_to '#' do %>
-              <%= cl_image_tag 'foward-icon.png', style: 'width: 0.8rem', remote: true %>
+              <%= cl_image_tag 'foward-icon.png', class: 'post-icon', remote: true %>
             <% end %>
+            <span>
+              53
+            </span> 
           </li>
           <li class="list-inline-item">
             <%= link_to '#' do %>
               <%= cl_image_tag 'share-icon.png', style: 'width: 0.8rem', remote: true %>
-            <% end %>
+            <% end %>         
           </li>      
         </ul>
       </div>
