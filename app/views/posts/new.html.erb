@@ -6,11 +6,14 @@
         <div class="form-inputs">
           <%= f.input :content, input_html: { class: "input-post" }, placeholder: "How do you sound like today?", label: false %>
         </div>
+        <div id="previews">
+          <%= image_tag 'https://via.placeholder.com/100', id: "img_prev", class: "preview" %>
+        </div>
         <div class="form-actions">
           <label class="btn btn-default btn-change-avatar">
             <i class="far fa-image"></i>
             <span style="display:none;">
-              <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %>
+              <%= f.input :photos, as: :file, input_html: { multiple: true }, :class => 'photo_upload', on: {:change => "readURL(this);"}, label: false %>
             </span>
            </label>
           <%= f.submit "post", class: "btn-post" %>
