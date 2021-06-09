@@ -28,8 +28,13 @@ import 'jquery';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
 import { initChatroomCable } from '../channels/chatroom_channel'
  
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+
 // Code to add preview when uploading file
 const input = document.getElementById('post_photos')
 const preview = document.getElementById('previews')
@@ -57,7 +62,11 @@ if(input){
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
   initChatroomCable();
+
+  initMapbox();
+
 });
 
 // Function for RESIZE video is INSIDE THE posts/index.html.erb
