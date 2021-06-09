@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   has_many :messages
   has_many :chat_memberships
   has_many :chatrooms, through: :chat_memberships
@@ -9,6 +12,9 @@ class User < ApplicationRecord
   has_many :subscriptions
 
   has_one_attached :photo
+
+  validates :description, length: { maximum: 200 }
+  validates :address, :username, :first_name, :last_name, presence: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

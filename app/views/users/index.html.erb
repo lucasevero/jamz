@@ -1,22 +1,19 @@
-<div class="main-container row">
+<div class="row">
   <div class="profile-column col-3">
-    <div class="profile-card text-center">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/danilogcastro", class: "super-avatar" %>
-      <h3 class="full-name mt-3"><%= current_user.first_name %> <%= current_user.last_name %></h3>
-      <p class="username mb-3">@<%= current_user.username %></p>
-      <p class="description my-3">TODO: add description to user model</p>
-    </div>
+    <%= render 'shared/profile_div' %>
   </div>
   <div class="search-column col-6">
-    <div class="search-container">
-      <div class="search-bar w-100">
-        <%= form_tag users_path, method: :get, class: "d-flex" do %>
+    <div class="">
+      <div class="search-bar">
+        <%= form_tag users_path, method: :get, class: "d-flex w-100" do %>
           <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
+            class: "form-control round-borders-left no-border-right",
             placeholder: "Find a user"
           %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <%= button_tag type: 'submit', class: "bg-white round-borders-right no-border-left" do %>
+            <i class="fas fa-search search-icon"></i>
+          <% end %>
         <% end %>
       </div>
       <div class="search-result mt-3">
@@ -37,4 +34,9 @@
       </div>
     </div>
   </div>
+  <div id="map"
+     class="map-column col-3"
+     style="width: 100%; height: 100vh;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
