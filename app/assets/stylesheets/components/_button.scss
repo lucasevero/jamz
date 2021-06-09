@@ -4,10 +4,24 @@
 
 .btn-home {
   padding: 12px 24px;
-  background-image: linear-gradient(to bottom, #A23E48 0%, #A23E48 0.02%, #FF8520 237.14%);
+  background-image: linear-gradient(180deg, #A23E48 0%, #A23E48 0.02%, #FF8520 150%);
   color: white;
   font-weight: bold;
   border-radius: 4px;
+  transition: 0.3s ease-in-out;
+    background-size: auto 125%;
+  &:hover {
+    background-position: bottom center;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+a:hover{
+  text-decoration: none;
+  color: white;
 }
 
 .btn-post {
@@ -39,3 +53,4 @@
   background-position: right center; /* change the direction of the change here */
  }
 }
+
