@@ -1,14 +1,9 @@
-<div class="main-container row">
+<div class="row">
   <div class="profile-column col-3">
-    <div class="profile-card text-center">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/danilogcastro", class: "super-avatar" %>
-      <h3 class="full-name mt-3"><%= current_user.first_name %> <%= current_user.last_name %></h3>
-      <p class="username mb-3">@<%= current_user.username %></p>
-      <p class="description my-3">TODO: add description to user model</p>
-    </div>
+    <%= render 'shared/profile_div' %>
   </div>
   <div class="search-column col-6">
-    <div class="search-container">
+    <div class="">
       <div class="search-bar">
         <%= form_tag users_path, method: :get, class: "d-flex w-100" do %>
           <%= text_field_tag :query,

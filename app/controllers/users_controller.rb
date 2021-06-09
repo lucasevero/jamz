@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
 
   def index
+    @user = current_user
     if params[:query].present?
       sql_query = "username ILIKE :query \
                   OR first_name ILIKE :query \
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
       @users = User.all
     end
   end
-  
+
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
