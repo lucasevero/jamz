@@ -29,11 +29,12 @@ import 'jquery';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+import { initNavbar } from '../plugins/init_navbar';
+
 import { initChatroomCable } from '../channels/chatroom_channel'
  
 
 import { initMapbox } from '../plugins/init_mapbox';
-
 
 // Code to add preview when uploading file
 const input = document.getElementById('post_photos')
@@ -62,6 +63,8 @@ if(input){
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+  initNavbar();
 
   initChatroomCable();
 
