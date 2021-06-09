@@ -8,10 +8,10 @@
         <p>@<%= post.user.username %> <span><%= post.created_at.strftime("%m.%b.%Y - %H:%M").downcase %></span></p>
       </div>
       <div class="post-content">
-        <div class="post-text">
+        <div class="post-text text-center">
           <h4><%= post.content %></h4>
         </div>
-        <div class="post-images">
+        <div class="post-images text-center">
           <% post.photos.each do |photo| %>
             <% if photo.blob.content_type == "video/mp4" %>
               <%= cl_video_tag "#{photo.key}", controls: true, width: 300, id: "video-post", onplay: "setNewSize()" %>
@@ -60,9 +60,5 @@
 </div>
 
 <script>
-  const setNewSize = () => {
-    const videoPlayer = document.getElementById('video-post')
-    videoPlayer.height = 300;
-    videoPlayer.width = 524;
-  };
+
 </script>

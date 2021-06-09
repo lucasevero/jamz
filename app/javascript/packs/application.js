@@ -52,6 +52,12 @@ if(input){
   });
 };
 
+const setNewSize = () => {
+  const videoPlayer = document.getElementById('video-post')
+  videoPlayer.height = 300;
+  videoPlayer.width = 524;
+};
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
