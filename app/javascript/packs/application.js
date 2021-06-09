@@ -28,6 +28,7 @@ import 'jquery';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initChatroomCable } from '../channels/chatroom_channel'
  
 // Code to add preview when uploading file
 const input = document.getElementById('post_photos')
@@ -52,15 +53,11 @@ if(input){
   });
 };
 
-const setNewSize = () => {
-  const videoPlayer = document.getElementById('video-post')
-  videoPlayer.height = 300;
-  videoPlayer.width = 524;
-};
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initChatroomCable();
 });
 
 // Function for RESIZE video is INSIDE THE posts/index.html.erb
