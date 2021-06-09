@@ -9,8 +9,8 @@
   </div>
   <div class="search-column">
     <div class="search-container col-10">
-      <div class="search-bar d-flex">
-        <%= form_tag users_path, method: :get do %>
+      <div class="search-bar w-100">
+        <%= form_tag users_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
@@ -19,21 +19,21 @@
           <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
       </div>
-      <div class="filters">
-      </div>
-      <div class="search-result">
-        <% @users.each do |user| %>
-          <div class="user-card text-center">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/danilogcastro", class: "avatar-large" %>
-            <h3 class="full-name mt-3"><%= user.first_name %> <%= user.last_name %></h3>
-            <p class="username mb-3">@<%= user.username %></p>
-            <div class="user-instruments">
-              <% user.instruments.each do |instrument| %>
-                <p><%= instrument.name %></p>
-              <% end %>
+      <div class="search-result mt-3">
+        <div class="row">
+          <% @users.each do |user| %>
+            <div class="user-card col-2 mx-1 mb-2 text-center">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/danilogcastro", class: "avatar-large" %>
+              <h3 class="full-name mt-3"><%= user.first_name %> <%= user.last_name %></h3>
+              <p class="username mb-3">@<%= user.username %></p>
+              <div class="user-instruments">
+                <% user.instruments.each do |instrument| %>
+                  <p><%= instrument.name %></p>
+                <% end %>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
