@@ -1,7 +1,49 @@
-<% @posts.each do |post| %>
-    <%= post.content %>
-  <% post.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>  
-    <br>
+
+<% @posts.where(user: 1).each do |post| %>
+  <%= post.content %>
 <% end %>
+<div class="container">
+<% @posts.each do |post| %>
+  <div class="row">
+    <div class="post-header">
+      <div class="header-content d-flex">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/dedemenezes", class: 'avatar' %>
+        <h5><%= post.user.first_name  %> <%= post.user.last_name  %></h5>
+        <p>@<%= post.user.username %> <span><%= post.created_at.strftime("%m.%b.%Y - %H:%M").downcase %></span></p>
+      </div>
+    </div>
+    <div class="post-content">
+      <div class="post-text">
+        <h4><%= post.content %></h4>
+      </div>
+      <div class="post-images">
+      </div>
+    </div>
+    <div class="post-actions">
+    <ul>
+      <li>
+        <%= link_to '#' do %>
+          <%= image_tag 'post-like-icon.png', style: 'width: 0.8rem' %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to '#' do %>
+          <%= image_tag 'post-comment-icon.png', style: 'width: 0.8rem' %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to '#' do %>
+          <%= image_tag 'post-foward-icon.png', style: 'width: 0.8rem' %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to '#' do %>
+          <%= image_tag 'post-share-icon.png', style: 'width: 0.8rem' %>
+        <% end %>
+      </li>      
+    </ul>
+    </div>
+  </div>
+<% end %>
+</div>
+
