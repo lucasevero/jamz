@@ -1,6 +1,9 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to image_tag('Jamz.svg', style: "width: 100px;"), root_path %>
-
+  <% if user_signed_in? %>
+    <%= link_to image_tag('Jamz.svg', style: "width: 100px;"), feed_users_path %>
+  <% else %>
+    <%= link_to image_tag('Jamz.svg', style: "width: 100px;"), root_path %>
+  <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

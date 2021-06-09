@@ -4,5 +4,9 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:index, :new, :create]
   resources :groups, only: [:index, :show, :new, :create]
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    collection do
+      get 'feed'
+    end
+  end
 end
