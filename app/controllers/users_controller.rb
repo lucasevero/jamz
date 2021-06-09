@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+  def feed
+    @user = current_user
+    @post = Post.new
+  end
+
+
   def index
     if params[:query].present?
       sql_query = "username ILIKE :query \
@@ -16,6 +22,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
+
     authorize @user
   end
 end

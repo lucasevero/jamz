@@ -5,6 +5,11 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
+
+  def feed?
+    true
+  end
+
   def index?
     true
   end
