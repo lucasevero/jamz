@@ -12,4 +12,10 @@ class UsersController < ApplicationController
       @users = User.all
     end
   end
+  
+  def show
+    @user = User.find(params[:id])
+    @posts = @user.posts
+    authorize @user
+  end
 end
