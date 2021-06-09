@@ -1,0 +1,13 @@
+.profile-div {
+  display: flex;
+  justify-content: space-around;
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  margin-top: 40px;
+  padding: 50px 0;
+  flex-wrap: wrap;
+  img {
+    display: block;
+    margin-bottom: 25px;
+  }
+}
