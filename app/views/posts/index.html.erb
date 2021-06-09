@@ -14,9 +14,9 @@
         <div class="post-images">
           <% post.photos.each do |photo| %>
             <% if photo.blob.content_type == "video/mp4" %>
-              <%= cl_video_tag "#{photo.key}", controls: true, height: 200, width: 300 %>
+              <%= cl_video_tag "#{photo.key}", controls: true, width: 300, id: "video-post", onplay: "setNewSize()" %>
             <% else %>
-              <%= cl_image_tag "#{photo.key}", :height=>250, :width=>250, :crop=>"fill" %>
+              <%= cl_image_tag "#{photo.key}", width: 300, id: "img-post" %>
             <% end %>  
           <% end %>
         </div>
@@ -59,3 +59,10 @@
 <% end %>
 </div>
 
+<script>
+  const setNewSize = () => {
+    const videoPlayer = document.getElementById('video-post')
+    videoPlayer.height = 300;
+    videoPlayer.width = 524;
+  };
+</script>
