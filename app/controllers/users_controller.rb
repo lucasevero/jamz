@@ -18,6 +18,13 @@ class UsersController < ApplicationController
     else
       @users = User.all
     end
+
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
   end
 
   def show
