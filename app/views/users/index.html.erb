@@ -9,14 +9,16 @@
   </div>
   <div class="search-column col-6">
     <div class="search-container">
-      <div class="search-bar w-100">
-        <%= form_tag users_path, method: :get, class: "d-flex" do %>
+      <div class="search-bar">
+        <%= form_tag users_path, method: :get, class: "d-flex w-100" do %>
           <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
+            class: "form-control round-borders-left no-border-right",
             placeholder: "Find a user"
           %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <%= button_tag type: 'submit', class: "bg-white round-borders-right no-border-left" do %>
+            <i class="fas fa-search search-icon"></i>
+          <% end %>
         <% end %>
       </div>
       <div class="search-result mt-3">
