@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
-
+  include ActionView::Helpers::DateHelper
+  
   def index
-    @posts = Post.all
+    @posts = Post.all.order(updated_at: :desc)
   end
 
   def new
