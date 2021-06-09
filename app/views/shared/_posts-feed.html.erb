@@ -2,7 +2,7 @@
     <div class="form">
       <%= simple_form_for [ @user, @post ] do |f| %>
         <%= f.input :content, placeholder: 'How do you sound like today?', label: false %>
-        <%= f.submit  "post", class: "form-button" %>
+        <%= f.submit  "Post", class: "form-button" %>
       <% end %>
     </div>
   </div>
@@ -12,6 +12,7 @@
     <div class="post-buttons-imgs d-flex justify-content-between align-items-end">
 
       <div class="d-flex justify-content-start align-items-end">
+
         <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252545/jamz/iconfinder_1976052_gallery_image_images_photo_picture_icon_oem2zf.svg" alt="picture_upload" class="post-emoji">
         <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252546/jamz/iconfinder_315415_gif_file_icon_pxzthc.svg" alt="gif_upload" class="post-emoji">
         <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252545/jamz/iconfinder_1276846_misc_smile_icon_iaiv0h.svg" alt="smile-button" class="post-emoji">
