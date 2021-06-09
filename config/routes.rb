@@ -11,4 +11,8 @@ Rails.application.routes.draw do
       get :feed
     end
   end
+  resources :chatrooms, only: :show do
+    resource :messages, only: :create
+  end
+
 end
