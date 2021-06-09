@@ -12,16 +12,16 @@
     <div>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <%= link_to "Home", feed_users_path, class: "nav-link active" %>
+          <%= link_to "Home", feed_users_path, id: "nav-home", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Groups", "#", class: "nav-link" %>
+          <%= link_to "Groups", "#", id: "nav-groups", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Chatrooms", "#", class: "nav-link" %>
+          <%= link_to "Chatrooms", "#", id: "nav-chatrooms", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
+          <%= link_to "Profile", user_path(current_user), id: "nav-profile", class: "nav-link" %>
         </li>
       </ul>
     </div>

@@ -28,7 +28,7 @@ import 'jquery';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
- 
+import { initNavbar } from '../plugins/init_navbar';
 // Code to add preview when uploading file
 const input = document.getElementById('post_photos')
 const preview = document.getElementById('previews')
@@ -61,6 +61,7 @@ const setNewSize = () => {
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initNavbar();
 });
 
 // Function for RESIZE video is INSIDE THE posts/index.html.erb
