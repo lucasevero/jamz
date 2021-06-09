@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
+
     @post = Post.new(post_params)
     @post.user = current_user
     @post.group = post_params[:group] if params[:group].present?
