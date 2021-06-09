@@ -8,6 +8,7 @@
     <%= f.input :username, required: true, autofocus: true %>
     <%= f.input :first_name, required: true, autofocus: true %>
     <%= f.input :last_name, required: true, autofocus: true %>
+    <%= f.input :description, required: true, autofocus: true %>
     <%= f.input :address, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
