@@ -3,4 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :groups, only: [:index, :show, :new, :create]
+
+  resources :users, only: [:show] do
+    resources :posts, only: [:create]
+    collection do
+      get :feed
+    end
+  end
 end
