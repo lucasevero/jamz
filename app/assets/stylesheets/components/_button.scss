@@ -1,3 +1,7 @@
+.btn-bg {
+  background-image: linear-gradient(to right, #A23E48 0%, #A23E48 0.02%, #FF8520 237.14%);
+}
+
 .btn-home {
   padding: 12px 24px;
   background-image: linear-gradient(to bottom, #A23E48 0%, #A23E48 0.02%, #FF8520 237.14%);
@@ -7,19 +11,31 @@
 }
 
 .btn-post {
+  font-family: 'Rock Salt', "cursive";
   padding: 8px 24px;
-  background-color: $my-red;
   border-radius: 25px;
   border: 1px solid $my-red;
   color: white;
   font-weight: lighter;
-  letter-spacing: 1.25px;
-  font-family: 'Rock Salt', "cursive";
-  background-image: linear-gradient(to bottom, #A23E48 0%);
+  background-size: 200% auto;
   opacity: 1;
-  transition-property: background-image;
-  transition-duration: 4s;
+  transition: 1s;
   &:hover {
-    background-image: linear-gradient(to bottom, #A23E48 0%, #A23E48 0.02%, #FF8520 237.14%);
+    background-position: bottom center;
   }
+}
+
+
+.btn-effect {
+  padding: 8px 24px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  border-radius: 25px;
+  border: 1px solid $my-red;
+ &:hover {
+  background-position: right center; /* change the direction of the change here */
+ }
 }
