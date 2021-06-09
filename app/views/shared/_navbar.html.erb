@@ -12,7 +12,7 @@
     <div>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <%= link_to "Home", "#", class: "nav-link active" %>
+          <%= link_to "Home", feed_users_path, class: "nav-link active" %>
         </li>
         <li class="nav-item">
           <%= link_to "Groups", "#", class: "nav-link" %>
@@ -21,7 +21,7 @@
           <%= link_to "Chatrooms", "#", class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Profile", "#", class: "nav-link" %>
+          <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
         </li>
       </ul>
     </div>
