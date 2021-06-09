@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 centered">
+      <div class="form-list">
+        <%= simple_form_for @post do |f| %>
+        <div class="form-inputs">
+          <%= f.input :content, input_html: { class: "input-post" }, placeholder: "How do you sound like today?", label: false %>
+        </div>
+        <div id="previews">
+          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+        </div>
+        <div class="form-actions">
+          <label class="btn btn-default btn-change-avatar">
+            <i class="far fa-image"></i>
+            <span style="display:none;">
+              <%= f.input :photos, as: :file, input_html: { multiple: true }, id: 'file-upload', class: 'photo_upload', label: false %>
+            </span>
+           </label>
+          <%= f.submit "post", class: "btn-post  btn-bg" %>
+        </div>
+        <% end %>  
+      </div>
+    </div>
+  </div>  
+</div>

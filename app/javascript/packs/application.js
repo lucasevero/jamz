@@ -24,11 +24,43 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import 'jquery';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+ 
+// Code to add preview when uploading file
+const input = document.getElementById('post_photos')
+const preview = document.getElementById('previews')
+
+// se quiser improve pode display more
+
+const displayPreview = (input) => {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      document.getElementById('photo-preview').src = event.currentTarget.result;
+    }
+    reader.readAsDataURL(input.files[0])
+    document.getElementById('photo-preview').classList.remove('hidden');
+  }
+}
+
+if(input){
+  input.addEventListener('change', (event) => {
+  displayPreview(input)
+  });
+};
+
+const setNewSize = () => {
+  const videoPlayer = document.getElementById('video-post')
+  videoPlayer.height = 300;
+  videoPlayer.width = 524;
+};
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+// Function for RESIZE video is INSIDE THE posts/index.html.erb
