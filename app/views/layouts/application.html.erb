@@ -15,7 +15,9 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-    <%= yield %>
+    <div class="container" style="max-width: 90%">
+      <%= yield %>
+    </div>
 
     <%= render 'shared/footer' %>
   </body>
