@@ -29,8 +29,24 @@ import 'jquery';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { readURL } from '../plugins/img_preview'
+ 
 
+const input = document.getElementById('post_photos')
+const preview = document.getElementById('previews')
 
+input.addEventListener('change', (event) => {
+  console.log(typeof(this));
+  const file = this.files[0];
+  if(file){
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      img.src = result
+    }
+    reader.readAsDataURL(file);
+  }
+  
+});
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
