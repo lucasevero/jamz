@@ -2,28 +2,28 @@
   <div class="container text-center">
       <h1>Jamz</h1>
       <p>Conneting musicians</p>
-      <a class="btn-home" href="#">Sign up</a>
+      <%= link_to 'Sign up', new_user_registration_path, class: 'btn-home' %>
   </div>
 </div>
 
 <div class="container my-3">
   <div class="row text-center">
     <div class="col-xs-12 col-sm-4 home-icon">
-      <%= image_tag 'search.png'%>
+      <%= cl_image_tag 'search-home-icon.png' %>
       <h2>Search</h2>
       <p>Find musicians and</p>
       <p>music lover near you</p>
     </div>
     <div class="col-xs-12 col-sm-4 home-icon">
       <div class="border-img">
-        <%= image_tag 'connect.png' %>
+        <%= cl_image_tag 'connect-home-icon.png' %>
       </div>
       <h2>Connect</h2>
       <p>Build your groups and
       <p>collaborate with musicians</p>
     </div>
     <div class="col-xs-12 col-sm-4 home-icon">
-      <%= image_tag 'singer.png'%>
+      <%= cl_image_tag 'jamz-home-icon.png'%>
       <h2>Jamz</h2>
       <p>Get together and play
       <p>as a group</p>

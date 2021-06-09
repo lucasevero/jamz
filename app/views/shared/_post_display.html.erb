@@ -1,0 +1,64 @@
+<div class="container">
+<% @posts.each do |post| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 offset-sm-3 post-container">
+      <div class="post-header d-flex">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/dedemenezes", class: 'avatar' %>
+        <h5><%= post.user.first_name  %> <%= post.user.last_name  %></h5>
+        <p>@<%= post.user.username %> <span><%= post.created_at.strftime("%m.%b.%Y - %H:%M").downcase %></span></p>
+      </div>
+      <div class="post-content">
+        <div class="post-text text-center">
+          <h4><%= post.content %></h4>
+        </div>
+        <div class="post-images text-center">
+          <% post.photos.each do |photo| %>
+            <% if photo.blob.content_type == "video/mp4" %>
+              <%= cl_video_tag "#{photo.key}", controls: true, width: 300, id: "video-post", onplay: "setNewSize()" %>
+            <% else %>
+              <%= cl_image_tag "#{photo.key}", width: 300, id: "img-post" %>
+            <% end %>  
+          <% end %>
+        </div>
+      </div>
+      <div class="post-action">
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <%= link_to '#' do %>
+              <%= cl_image_tag 'like-icon.png', class: 'post-icon', remote: true %>
+            <% end %>
+            <span>
+              2,1k
+            </span>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to '#' do %>
+              <%= cl_image_tag 'comment-icon.png', class: 'post-icon', remote: true %>
+            <% end %>
+            <span>
+              228
+            </span>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to '#' do %>
+              <%= cl_image_tag 'foward-icon.png', class: 'post-icon', remote: true %>
+            <% end %>
+            <span>
+              53
+            </span> 
+          </li>
+          <li class="list-inline-item">
+            <%= link_to '#' do %>
+              <%= cl_image_tag 'share-icon.png', style: 'width: 0.8rem', remote: true %>
+            <% end %>         
+          </li>      
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<script>
+
+</script>
