@@ -1,16 +1,16 @@
 <div class="profile-div">
-  <div style="width: 100%; display: flex; justify-content: center;">
+  <div id="profile-img">
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large" %>
   </div>
   <div style="text-align: center;">
-    <h2>Sheldon Cooper</h2>
-    <p>@ssaunier</p>
+    <h2 class="red-title"><%= @user.first_name + ' ' + @user.last_name %></h2>
+    <p>@<%= @user.username %></p>
     <br>
     <p>Just some brillant scientist</p>
     <br>
     <div class="d-flex justify-content-around">
-      <div><h3>75</h3><h5>friends</h5></div>
-      <div><h3>9</h3><h5>jams</h5></div>
+      <div><h3 class="red-title">75</h3><h5>friends</h5></div>
+      <div><h3 class="red-title">9</h3><h5>jams</h5></div>
     </div>
   </div>
 </div>

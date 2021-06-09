@@ -10,4 +10,13 @@
     display: block;
     margin-bottom: 25px;
   }
+  #profile-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .red-title {
+    font-weight: 700;
+    color: #A23E48;
+  }
 }
