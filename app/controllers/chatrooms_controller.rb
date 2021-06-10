@@ -9,6 +9,7 @@ class ChatroomsController < ApplicationController
   def create
     @friend = User.find(params[:user_id])
     @chatroom = Chatroom.new(name: "#{@friend.username} - #{current_user.username}")
+    # use build because the chatroom is not persisted and we need the chatroom id to create chat_membership
     @chatroom.chat_memberships.build(user: @friend)
     @chatroom.chat_memberships.build(user: current_user)
     # create_membership(@friend)
