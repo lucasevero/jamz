@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   def feed
     @user = current_user
     @post = Post.new
+    @posts = @posts = Post.all.order(updated_at: :desc)
+    authorize @user
+    authorize @post
+    authorize @posts
   end
 
 
@@ -18,7 +22,7 @@ class UsersController < ApplicationController
       @users = User.all
     end
   end
-  
+
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
