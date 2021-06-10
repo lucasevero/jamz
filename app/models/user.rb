@@ -16,6 +16,17 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :skills
   accepts_nested_attributes_for :instruments
 
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [:username, :first_name, :last_name, :address],
+    associated_against: {
+      skills: [:experience, :instrument_id]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+
+
   validates :description, length: { maximum: 200 }
   validates :address, :username, :first_name, :last_name, presence: true
   # Include default devise modules. Others available are:
