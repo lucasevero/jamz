@@ -15,5 +15,11 @@
       <div><h3 class="red-title">75</h3><h5>friends</h5></div>
       <div><h3 class="red-title">9</h3><h5>jams</h5></div>
     </div>
+    <div class="profile-action">
+      <%= link_to chatrooms_path(user_id: params[:id]), method: 'POST', class: 'btn-msg' do %>
+        <i class="fas fa-comments"></i>
+        Connect
+      <% end %>
+    </div>
   </div>
 </div>
