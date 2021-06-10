@@ -37,7 +37,4 @@ class UsersController < ApplicationController
 
     authorize @user
   end
-
-  def feed
-  end
 end
