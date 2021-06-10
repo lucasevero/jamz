@@ -76,7 +76,7 @@ document.addEventListener('turbolinks:load', () => {
 
   initMapbox();
 
-  initProfileNav();
+  // initProfileNav();
 
   initAutocomplete();
 

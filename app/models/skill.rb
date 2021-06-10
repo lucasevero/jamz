@@ -1,6 +1,5 @@
 class Skill < ApplicationRecord
   belongs_to :user
-  belongs_to :instrument
 
   EXPERIENCE = ['Beginner', 'Intermediate', 'Pro']
   INSTRUMENTS = ['Guitar', 'Electric Guitar', 'Bass', 'Drums']
