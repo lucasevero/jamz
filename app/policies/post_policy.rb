@@ -12,4 +12,8 @@ class PostPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def feed?
+    true
+  end
 end
