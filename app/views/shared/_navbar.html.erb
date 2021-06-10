@@ -18,7 +18,7 @@
           <%= link_to "Groups", "#", id: "nav-groups", class: "nav-link", data: { turbolinks: false } %>
         </li>
         <li class="nav-item">
-          <%= link_to "Chatrooms", "#", id: "nav-chatrooms", class: "nav-link", data: { turbolinks: false } %>
+          <%= link_to "Chatrooms", chat_memberships_path(current_user), id: "nav-chatrooms", class: "nav-link", data: { turbolinks: false } %>
         </li>
         <li class="nav-item">
           <%= link_to "Profile", user_path(current_user), id: "nav-profile", class: "nav-link", data: { turbolinks: false } %>
