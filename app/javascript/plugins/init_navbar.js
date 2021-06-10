@@ -6,7 +6,6 @@ const navProfile = document.getElementById("nav-profile")
 const initNavbar = () => {
   if (document.URL == "http://localhost:3000/users/1") {
     navProfile.classList.add("active");
-    console.log('test')
   } else if (document.URL == "http://localhost:3000/users/feed") {
     navHome.classList.add("active");
   }

@@ -35,7 +35,11 @@ import { initChatroomCable } from '../channels/chatroom_channel'
 
 import { initMapbox } from '../plugins/init_mapbox';
 
+
+import { initProfileNav } from '../plugins/profile_nav_item'
+
 import { initAutocomplete } from '../plugins/init_autocomplete';
+
 
 // Code to add preview when uploading file
 const input = document.getElementById('post_photos')
@@ -71,6 +75,8 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
 
   initMapbox();
+
+  initProfileNav();
 
   initAutocomplete();
 
