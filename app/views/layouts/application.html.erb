@@ -21,6 +21,9 @@
     </div>
 
     <%= render 'shared/footer' %>
-    <div id="current-user-id" style="display: none;"><%= current_user.id %></div>
+    <% if user_signed_in? %>
+      <div id="current-user-id" style="display: none;"><%= current_user.id %></div>
+    <% end %>
+    
   </body>
 </html>
