@@ -28,7 +28,7 @@ a:hover{
   font-family: 'Oxygen', 'sans-serif';
   padding: 8px 24px;
   border-radius: 25px;
-  border: 1px solid $my-red;
+  border: 0px solid $my-red; // Altered from 1px to 0px
   color: white;
   font-weight: lighter;
   background-size: auto 200%;
