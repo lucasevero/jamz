@@ -11,6 +11,7 @@ require 'faker'
 puts 'Cleaning DB...'
 
 User.destroy_all
+Instrument.destroy_all
 
 puts 'Done!'
 
