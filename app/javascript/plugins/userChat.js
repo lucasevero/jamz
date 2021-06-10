@@ -1,4 +1,4 @@
-const initUserChat = () =>{
+const userChat = () =>{
   const trigger = document.getElementById('chat-trigger');
   if(trigger) {
     const target = document.getElementById('chat-target');
@@ -9,4 +9,4 @@ const initUserChat = () =>{
   };
 };
 
-export { initUserChat }
+export { userChat }

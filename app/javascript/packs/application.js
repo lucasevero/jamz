@@ -39,7 +39,7 @@ import { initProfileNav } from '../plugins/profile_nav_item'
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
-import { initUserChat } from '../plugins/init_userChat'
+import { userChat } from '../plugins/userChat'
 
 
 // Code to add preview when uploading file
@@ -80,8 +80,6 @@ document.addEventListener('turbolinks:load', () => {
   initProfileNav();
 
   initAutocomplete();
-
-  initUserChat();
 
 });
 

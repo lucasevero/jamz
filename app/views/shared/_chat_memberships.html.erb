@@ -1,11 +1,11 @@
 <div class="chat-header container" id="chat-trigger">
-  <p>Chats <%= @chat_memberships.size %></p>
-  <div class="chat-content d-none" id="chat-target">
+  <p>Chats <%= chat_memberships.size %></p>
+  <div class="chat-content" id="chat-target">
     <ul>
-      <% @chat_memberships.each do |chat_membership| %>
+      <% chat_memberships.each do |chat_membership| %>
         <li>
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-          <%= link_to chatroom_path(chat_membership.chatroom), remote: true do %>
+          <%= link_to chatroom_path(chat_membership.chatroom), data: { id: chat_membership.chatroom.id } do %>
             <% memberships = ChatMembership.where(chatroom: chat_membership.chatroom_id) %>
             <% if memberships.first.user.username == current_user.username %>
               <%= current_user.username %>
@@ -18,5 +18,3 @@
     </ul>
   </div>
 </div>
-
-
