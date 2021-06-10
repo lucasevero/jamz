@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     collection do
       get :feed
     end
+
+    member do
+      resources :chatmemberships, only: :index
+    end
   end
   
   resources :chatrooms, only: [:show, :create] do
