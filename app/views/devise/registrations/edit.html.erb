@@ -10,6 +10,7 @@
     <%= f.input :last_name, required: true, autofocus: true %>
     <%= f.input :description, required: true, autofocus: true %>
     <%= f.input :address, required: true, autofocus: true, id: "user_address" %>
+    <%= f.input :photo, as: :file %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
