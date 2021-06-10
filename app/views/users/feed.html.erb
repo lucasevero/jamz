@@ -1,17 +1,23 @@
 <div class="row ">
   <div class=" col-12 col-lg-3 col-sm-12 pe-1 ps-1">
 
-    <div class="user--container">
+    <div class="user--container d-none d-lg-block">
 
       <%= render 'shared/profile_div' %>
 
     </div>
 
+     <div class="search--container mb-3 d-block d-lg-none">
+
+      <%= render 'shared/search_bar' %>
+
+      </div>
+
   </div>
 
   <div class="col-lg-6 col-sm-12">
 
-    <div class="post--container mb-5 p-3">
+    <div class="post--container mb-3 p-3">
 
       <%= render 'shared/post-feed_new' %>
 
@@ -35,21 +41,21 @@
 
   <div class="col-lg-3 col-sm-12">
 
-     <div class="search--container mb-5">
+     <div class="search--container mb-5 d-none d-lg-block">
 
       <%= render 'shared/search_bar' %>
 
       </div>
 
-      <div class="msg--container_title mb-1">
+      <div class="msg--container_title mb-1 d-none d-lg-block">
         <div class="container d-flex justify-content-around align-items-center">
-          <h1>messages</h1>
+          <h1>msgs</h1>
           <span class="dot"></span>
-          <h1>notifications</h1>
+          <h1>not</h1>
         </div>
       </div>
 
-      <div class="msg--container p-3">
+      <div class="msg--container p-3 d-none d-lg-block">
 
       </div>
 

@@ -11,6 +11,7 @@
     "channels": "0.0.4",
     "jquery": "^3.6.0",
     "mapbox-gl": "^2.3.0",
+    "places.js": "^1.19.0",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
   },
