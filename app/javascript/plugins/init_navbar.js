@@ -5,13 +5,13 @@ const navProfile = document.getElementById("nav-profile")
 const currentUserId = document.getElementById("current-user-id")
 
 const initNavbar = () => {
-  if (document.URL == "http://localhost:3000/users/feed") {
+  if (window.location.pathname == "/users/feed") {
     navHome.classList.add("active");
-  } else if (document.URL == "http://localhost:3000/groups") {
+  } else if (window.location.pathname == "/groups") {
     navGroups.classList.add("active");
-  } else if (document.URL == `http://localhost:3000/users/${currentUserId.innerText}/chat_memberships`) {
+  } else if (window.location.pathname == `/users/${currentUserId.innerText}/chat_memberships`) {
     navChatrooms.classList.add("active");
-  } else if (document.URL == `http://localhost:3000/users/${currentUserId.innerText}`) {
+  } else if (window.location.pathname == `/users/${currentUserId.innerText}`) {
     navProfile.classList.add("active");
   };
 }
