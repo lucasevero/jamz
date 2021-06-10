@@ -2,14 +2,14 @@ class User < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  has_many :messages
-  has_many :chat_memberships
+  has_many :messages, dependent: :destroy
+  has_many :chat_memberships, dependent: :destroy
   has_many :chatrooms, through: :chat_memberships
-  has_many :skills
+  has_many :skills, dependent: :destroy
   has_many :instruments, through: :skills
-  has_many :posts
-  has_many :groups
-  has_many :subscriptions
+  has_many :posts, dependent: :destroy
+  has_many :groups, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
 
   has_one_attached :photo
 
