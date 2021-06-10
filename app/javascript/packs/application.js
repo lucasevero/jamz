@@ -32,9 +32,10 @@ import 'jquery';
 import { initNavbar } from '../plugins/init_navbar';
 
 import { initChatroomCable } from '../channels/chatroom_channel'
- 
 
 import { initMapbox } from '../plugins/init_mapbox';
+
+import { initProfileNav } from '../plugins/profile_nav_item'
 
 // Code to add preview when uploading file
 const input = document.getElementById('post_photos')
@@ -69,6 +70,8 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
 
   initMapbox();
+
+  initProfileNav();
 
 });
 
