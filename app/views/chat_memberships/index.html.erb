@@ -1,0 +1,5 @@
+<% @chat_memberships.each do |chat_membership| %>
+  <%= link_to chatroom_path(chat_membership.chatroom) do %>
+    <%= chat_membership.chatroom.name %>
+  <% end %>
+<% end %>
