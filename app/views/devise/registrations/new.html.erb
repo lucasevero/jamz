@@ -22,7 +22,14 @@
                 autofocus: true%>
     <%= f.input :address,
                 required: true,
-                autofocus: true%>
+                autofocus: true,
+                id: "user_address"%>
+
+    <%= f.simple_fields_for :skills do |skill_form| %>
+      <%= skill_form.input :experience, as: :select, collection: Skill::EXPERIENCE %>
+      <%= skill_form.association :instrument, label_method: :name, input_method: :id, as: :select %>
+    <% end %>
+
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

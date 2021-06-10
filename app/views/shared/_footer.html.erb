@@ -1,5 +1,5 @@
 <div class="footer mt-5 py-3">
-  <div class="row text-center content">
+  <div class="row text-center content d-flex flex-row align-items-center">
     <div class="col-xs-12 col-sm-6">
       <div class="footer-links">
         <a href="#"><i class="fab fa-github"></i></a>
@@ -9,9 +9,12 @@
         <a href="#"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-6">
-      <div class="footer-copyright">
-        <p><span>This app was developed by:</span>
+    <div class="col-xs-12 col-sm-6 mt-3">
+      <div class="footer-copyright d-flex flex-column">
+        <div class="footer-span-1">
+          <p><span>This app was developed by:</span></p>
+        </div>
+        <div class="footer-avatar">
           <%= link_to "https://www.linkedin.com/in/danilocastro1989/", target: "blank", class: "dev" do %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/danilogcastro", class: "avatar" %>
           <% end %>
@@ -24,7 +27,7 @@
           <%= link_to "https://www.linkedin.com/in/andre-menezes-developer/", target: "blank" do %>
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/dedemenezes", class: "avatar" %>
           <% end %>
-        </p>
+          </div>
       </div>
     </div>
   </div>

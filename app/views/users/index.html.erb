@@ -19,13 +19,16 @@
       <div class="search-result mt-3">
         <div class="row justify-content-start">
           <% @users.each do |user| %>
-            <div class="user-card col-3 text-center">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/danilogcastro", class: "avatar-large" %>
+            <div class="user-card d-flex flex-column align-items-center col-3 text-center">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/danilogcastro", class: "avatar-medium" %>
               <h3 class="full-name mt-3"><%= user.first_name %> <%= user.last_name %></h3>
-              <p class="username mb-3">@<%= user.username %></p>
+              <%= link_to user_path(user) do %>
+                <p class="username mb-3">@<%= user.username %></p>
+              <% end %>
               <div class="user-instruments">
-                <% user.instruments.each do |instrument| %>
-                  <p><%= instrument.name %></p>
+                <p>Plays:</p>
+                <% user.skills.each do |skill| %>
+                  <p><%= skill.instrument.name %> | <%= skill.experience %></p>
                 <% end %>
               </div>
             </div>
