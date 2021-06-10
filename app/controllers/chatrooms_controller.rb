@@ -6,4 +6,8 @@ class ChatroomsController < ApplicationController
     authorize @chatroom
   end
 
+  def create
+    raise
+  end
+
 end
