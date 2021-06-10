@@ -139,6 +139,10 @@ user10 = User.new(
 
 user10.save!
 
+Instrument::INSTRUMENTS.each do |name|
+  Instrument.create!(name: name)
+end
+
 
 puts 'All done!'
 

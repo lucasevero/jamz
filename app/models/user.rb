@@ -13,6 +13,9 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+  accepts_nested_attributes_for :skills
+  accepts_nested_attributes_for :instruments
+
   validates :description, length: { maximum: 200 }
   validates :address, :username, :first_name, :last_name, presence: true
   # Include default devise modules. Others available are:
