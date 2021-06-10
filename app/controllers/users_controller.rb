@@ -9,8 +9,8 @@ class UsersController < ApplicationController
     authorize @posts
   end
 
-
   def index
+    @user = current_user
     if params[:query].present?
       sql_query = "username ILIKE :query \
                   OR first_name ILIKE :query \
@@ -21,6 +21,14 @@ class UsersController < ApplicationController
     else
       @users = User.all
     end
+
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user })
+      }
+    end
   end
 
   def show
@@ -28,5 +36,8 @@ class UsersController < ApplicationController
     @posts = @user.posts
 
     authorize @user
+  end
+
+  def feed
   end
 end
