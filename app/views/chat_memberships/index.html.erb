@@ -1,12 +1,22 @@
-<% @chat_memberships.each do |chat_membership| %>
-  <%= link_to chatroom_path(chat_membership.chatroom) do %>
-    <% memberships = ChatMembership.where(chatroom: chat_membership.chatroom_id) %>
-    <% if memberships.first.user.username == current_user.username %>
-      <%= memberships.second.user.username %>
-    <% else %>
-      <%= memberships.first.user.username %>
-    <% end %>
-  <% end %>
-<% end %>
+<div class="chat-header container" id="chat-trigger">
+  <p>Chats <%= @chat_memberships.size %></p>
+  <div class="chat-content" id="chat-target">
+    <ul>
+      <% @chat_memberships.each do |chat_membership| %>
+        <li>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+          <%= link_to chatroom_path(chat_membership.chatroom) do %>
+            <% memberships = ChatMembership.where(chatroom: chat_membership.chatroom_id) %>
+            <% if memberships.first.user.username == current_user.username %>
+              <%= current_user.username %>
+            <% else %>
+              <%= memberships.first.user.username %>
+            <% end %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 
