@@ -16,6 +16,10 @@ puts 'Done!'
 
 puts 'Seeding...'
 
+Instrument::INSTRUMENTS.each do |name|
+  Instrument.create!(name: name)
+end
+
 user1 = User.new(
   email: 'danilo@castro.com',
   password: '123456',
@@ -23,7 +27,10 @@ user1 = User.new(
   first_name: 'Danilo',
   last_name: 'Castro',
   address: 'Praça Radial Sul 90',
-  description: Faker::GreekPhilosophers.quote
+  description: Faker::GreekPhilosophers.quote,
+  skills_attributes: {
+    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    }
   )
 
 user1.save!
@@ -35,7 +42,10 @@ user2 = User.new(
   first_name: 'Andre',
   last_name: 'Menezes',
   address: 'Rua Bambina 105',
-  description: Faker::GreekPhilosophers.quote
+  description: Faker::GreekPhilosophers.quote,
+  skills_attributes: {
+    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    }
   )
 
 user2.save!
@@ -47,7 +57,10 @@ user3 = User.new(
   first_name: 'Carla',
   last_name: 'Valdivia',
   address: 'Rua São Clemente 70',
-  description: Faker::GreekPhilosophers.quote
+  description: Faker::GreekPhilosophers.quote,
+  skills_attributes: {
+    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    }
   )
 
 user3.save!
@@ -59,7 +72,10 @@ user4 = User.new(
   first_name: 'Luca',
   last_name: 'Severo',
   address: 'Rua Santa Clara 256',
-  description: Faker::GreekPhilosophers.quote
+  description: Faker::GreekPhilosophers.quote,
+  skills_attributes: {
+    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    }
   )
 
 user4.save!
@@ -71,7 +87,10 @@ user5 = User.new(
   first_name: Faker::Name.first_name ,
   last_name: Faker::Name.last_name,
   address: 'Avenida Nossa Senhora de Copacabana 1189',
-  description: Faker::GreekPhilosophers.quote
+  description: Faker::GreekPhilosophers.quote,
+  skills_attributes: {
+    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    }
   )
 
 user5.save!
@@ -83,7 +102,10 @@ user6 = User.new(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   address: 'Avenida Visconde de Pirajá 568',
-  description: Faker::GreekPhilosophers.quote
+  description: Faker::GreekPhilosophers.quote,
+  skills_attributes: {
+    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    }
   )
 
 user6.save!
@@ -96,7 +118,10 @@ user7 = User.new(
   first_name: Faker::Name.first_name ,
   last_name: Faker::Name.last_name,
   address: 'Rua das Laranjeiras 336',
-  description: Faker::GreekPhilosophers.quote
+  description: Faker::GreekPhilosophers.quote,
+  skills_attributes: {
+    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    }
   )
 
 user7.save!
@@ -109,7 +134,10 @@ user8 = User.new(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   address: 'Rua Barata Ribeiro 200',
-  description: Faker::GreekPhilosophers.quote
+  description: Faker::GreekPhilosophers.quote,
+  skills_attributes: {
+    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    }
   )
 
 user8.save!
@@ -122,7 +150,10 @@ user9 = User.new(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   address: 'Rua Vinicius de Morais 35',
-  description: Faker::GreekPhilosophers.quote
+  description: Faker::GreekPhilosophers.quote,
+  skills_attributes: {
+    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    }
   )
 
 user9.save!
@@ -134,14 +165,15 @@ user10 = User.new(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   address: 'Rua Dona Mariana 112',
-  description: Faker::GreekPhilosophers.quote
+  description: Faker::GreekPhilosophers.quote,
+  skills_attributes: {
+    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    }
   )
 
 user10.save!
 
-Instrument::INSTRUMENTS.each do |name|
-  Instrument.create!(name: name)
-end
+
 
 
 puts 'All done!'
