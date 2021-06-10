@@ -22,7 +22,8 @@
                 autofocus: true%>
     <%= f.input :address,
                 required: true,
-                autofocus: true%>
+                autofocus: true,
+                id: "user_address"%>
 
     <%= f.simple_fields_for :skills do |skill_form| %>
       <%= skill_form.input :experience, as: :select, collection: Skill::EXPERIENCE %>
