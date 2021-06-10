@@ -6,8 +6,8 @@
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large" %>
   </div>
   <div style="text-align: center;">
-    <h2 class="red-title"><%= @user.first_name + ' ' + @user.last_name %></h2>
-    <p>@<%= @user.username %></p>
+    <h2 class="red-title"><%= current_user.first_name + ' ' + current_user.last_name %></h2>
+    <p>@<%= current_user.username %></p>
     <br>
     <p>Just some brillant scientist</p>
     <br>
