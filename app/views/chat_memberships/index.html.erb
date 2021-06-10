@@ -1,6 +1,6 @@
 <div class="chat-header container" id="chat-trigger">
   <p>Chats <%= @chat_memberships.size %></p>
-  <div class="chat-content" id="chat-target">
+  <div class="chat-content d-none" id="chat-target">
     <ul>
       <% @chat_memberships.each do |chat_membership| %>
         <li>

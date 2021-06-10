@@ -35,10 +35,11 @@ import { initChatroomCable } from '../channels/chatroom_channel'
 
 import { initMapbox } from '../plugins/init_mapbox';
 
-
 import { initProfileNav } from '../plugins/profile_nav_item'
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
+
+import { initUserChat } from '../plugins/init_userChat'
 
 
 // Code to add preview when uploading file
@@ -79,6 +80,8 @@ document.addEventListener('turbolinks:load', () => {
   initProfileNav();
 
   initAutocomplete();
+
+  initUserChat();
 
 });
 
