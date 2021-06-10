@@ -9,11 +9,12 @@ class ChatroomsController < ApplicationController
   def create
     @friend = User.find(params[:user_id])
     @chatroom = Chatroom.new(name: "#{@friend.username} - #{current_user.username}")
-    @chatroom.save
-    create_membership(@friend)
-    create_membership(current_user)
+    @chatroom.chat_memberships.build(user: @friend)
+    @chatroom.chat_memberships.build(user: current_user)
+    # create_membership(@friend)
+    # create_membership(current_user)
     authorize @chatroom
-    if @chatroom
+    if @chatroom.save
       redirect_to chatroom_path(@chatroom)
     else
       render user_path(@friend)
