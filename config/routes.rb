@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
 
     member do
-      resources :chatmemberships, only: :index
+      resources :chat_memberships, only: :index
     end
   end
   
