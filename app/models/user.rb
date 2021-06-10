@@ -20,12 +20,12 @@ class User < ApplicationRecord
   pg_search_scope :global_search,
     against: [:username, :first_name, :last_name, :address],
     associated_against: {
-      skills: [:experience, :instrument_id]
+      skills: [:experience],
+      instruments: [:name]
     },
     using: {
       tsearch: { prefix: true }
     }
-
 
   validates :description, length: { maximum: 200 }
   validates :address, :username, :first_name, :last_name, presence: true
