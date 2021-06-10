@@ -27,7 +27,7 @@
 
     <%= f.simple_fields_for :skills do |skill_form| %>
       <%= skill_form.input :experience, as: :select, collection: Skill::EXPERIENCE %>
-      <%= skill_form.association :instrument, label_method: :name, input_method: :id, as: :select %>
+      <%= skill_form.input :instrument, as: :select, collection: Skill::INSTRUMENTS %>
     <% end %>
 
     <%= f.input :photo, as: :file %>
