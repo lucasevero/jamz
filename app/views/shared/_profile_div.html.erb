@@ -1,15 +1,17 @@
 <div class="profile-div">
   <div class="gear_wheel_div">
-    <%= image_tag 'gear_wheel.svg', id: "gear_wheel" %>
+    <%= link_to edit_user_registration_path do %>
+      <%= image_tag 'gear_wheel.svg', id: "gear_wheel" %>
+    <% end %>
   </div>
   <div id="profile-img">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large" %>
+    <%= cl_image_tag display_photo(@user), aspect_ratio: 1, crop: :fill, class: "avatar-large" %>
   </div>
   <div style="text-align: center;">
-    <h2 class="red-title"><%= current_user.first_name + ' ' + current_user.last_name %></h2>
-    <p>@<%= current_user.username %></p>
+    <h2 class="red-title"><%= @user.first_name + ' ' + @user.last_name %></h2>
+    <p>@<%= @user.username %></p>
     <br>
-    <p>Just some brillant scientist</p>
+    <p><%= @user.description %></p>
     <br>
     <div class="d-flex justify-content-around">
       <div><h3 class="red-title">75</h3><h5>friends</h5></div>
