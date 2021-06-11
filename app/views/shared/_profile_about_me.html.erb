@@ -5,7 +5,7 @@
       <%= image_tag 'location_icon.svg', class: "about-me-icon" %>
       <div class="about-text">
         <h5>location:</h5>
-        <p>Rio de Janeiro</p>
+        <p><%= @user.address %></p>
       </div>
     </div>
   <% end %>
@@ -16,7 +16,11 @@
       <%= image_tag 'headphone_icon.svg', class: "about-me-icon" %>
       <div class="about-text">
         <h5>what I listen to:</h5>
-        <p>Rock and Axé</p>
+        <p>
+          <% @user.genres.each do |genre| %>
+            <%= genre.name %>;
+          <% end %>
+        </p>
       </div>
     </div>
   <% end %>
@@ -27,7 +31,9 @@
       <%= image_tag 'piano_icon.svg', class: "about-me-icon" %>
       <div class="about-text">
         <h5>what I play:</h5>
-        <p>Piano for 20 years</p>
+        <% @user.skills.each do |skill| %>
+          <p><%= skill.instrument %>; <%= skill.experience %></p>
+        <% end %>
       </div>
     </div>
   <% end %>
