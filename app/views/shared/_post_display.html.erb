@@ -28,7 +28,7 @@
               <%= cl_image_tag 'like-icon.png', data_like_target: "like", class: 'post-icon', remote: true %>
             <% end %>
             <span>
-              2,1k
+              <%= post.likes.count %>
             </span>
           </li>
           <li class="list-inline-item">
