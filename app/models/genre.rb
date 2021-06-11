@@ -1,4 +1,7 @@
 class Genre < ApplicationRecord
-  has_many :listenings
-  has_many :users, through: :listenings
+  belongs_to :user
+
+  GENRES = ['Samba', 'Rock', 'Metal', 'Pop']
+
+  validates :name, inclusion: { in: GENRES }
 end
