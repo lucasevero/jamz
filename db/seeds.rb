@@ -169,6 +169,36 @@ user10 = User.new(
 
 user10.save!
 
+user11 = User.new(
+  email: Faker::Internet.email ,
+  password: '123456',
+  username: Faker::Internet.username,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  address: 'Rua Riachuelo 119',
+  description: Faker::GreekPhilosophers.quote,
+  skills_attributes: {
+    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    }
+  )
+
+user11.save!
+
+user12 = User.new(
+  email: Faker::Internet.email ,
+  password: '123456',
+  username: Faker::Internet.username,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  address: 'Rua Barão de Mesquita 314',
+  description: Faker::GreekPhilosophers.quote,
+  skills_attributes: {
+    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    }
+  )
+
+user12.save!
+
 
 
 
