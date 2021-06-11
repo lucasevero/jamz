@@ -11,7 +11,7 @@
   <% end %>
 
   <!-- genres -->
-  <% if @user.genres.empty? == false %>
+  <% unless @user.genres.empty? %>
     <div class="card-about">
       <%= image_tag 'headphone_icon.svg', class: "about-me-icon" %>
       <div class="about-text">
@@ -22,7 +22,7 @@
   <% end %>
 
   <!-- skills -->
-  <% if @user.skills.empty? == false %>
+  <% unless @user.skills.empty? %>
     <div class="card-about">
       <%= image_tag 'piano_icon.svg', class: "about-me-icon" %>
       <div class="about-text">
