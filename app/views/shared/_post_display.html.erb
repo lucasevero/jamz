@@ -21,7 +21,7 @@
           <% end %>
         </div>
       </div>
-      <div class="post-action">
+      <div class="post-action" id="post-<%= post.id %>">
         <ul class="list-inline">
           <li class="list-inline-item" data-controller="like">
             <%= link_to likes_path(post), method: "POST" do %>

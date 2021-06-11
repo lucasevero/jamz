@@ -6,7 +6,6 @@ class LikePolicy < ApplicationPolicy
   end
 
   def create?
-    false if record.post.likes.find_by(user_id: user.id).present?
-    false if record.post.user == user
+    !record.post.likes.find_by(user_id: user.id).present? && record.post.user != user
   end
 end
