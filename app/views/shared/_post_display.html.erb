@@ -23,9 +23,9 @@
       </div>
       <div class="post-action">
         <ul class="list-inline">
-          <li class="list-inline-item">
-            <%= link_to '#' do %>
-              <%= cl_image_tag 'like-icon.png', class: 'post-icon', remote: true %>
+          <li class="list-inline-item" data-controller="like">
+            <%= link_to likes_path(post), method: "POST" do %>
+              <%= cl_image_tag 'like-icon.png', data_like_target: "like", class: 'post-icon', remote: true %>
             <% end %>
             <span>
               2,1k
