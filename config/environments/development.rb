@@ -54,7 +54,9 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
   # O problema no computador do André era no temporary file gerado dos assets. 
-  ### config.assets.check_precompiled_asset = false
+  config.assets.check_precompiled_asset = false
+  # config.serve_static_files = true
+  
   # Esse comando acima skip o temporary gerado anteriormente.
   # Podemos resolver removendo quando o problema ocorrer.
   # Para isso usamos 'rm -rf tmp/cache/assets'
