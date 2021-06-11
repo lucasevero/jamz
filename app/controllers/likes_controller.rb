@@ -3,6 +3,7 @@ class LikesController < ApplicationController
 
   def create
     @like = Like.new(user: current_user, post: @post)
+    authorize @like
     if @like.save
       redirect_to feed_users_path
     else
