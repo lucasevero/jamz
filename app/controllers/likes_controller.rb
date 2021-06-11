@@ -13,6 +13,16 @@ class LikesController < ApplicationController
     end
   end
 
+  def destroy
+    @like = @post.likes.find_by(user: current_user.id)
+    authorize @like
+    if @like.destroy
+      redirect_to feed_users_path( anchor: "post-#{@post.id}" )
+    else
+      render :feed_users
+    end
+  end
+  
   private 
 
   def set_post

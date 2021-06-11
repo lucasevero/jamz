@@ -8,4 +8,8 @@ class LikePolicy < ApplicationPolicy
   def create?
     !record.post.likes.find_by(user_id: user.id).present? && record.post.user != user
   end
+
+  def destroy?
+    record.post.likes.find_by(user_id: user.id).present?
+  end
 end
