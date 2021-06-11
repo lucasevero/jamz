@@ -3,7 +3,7 @@
   justify-content: space-around;
   background-color: #FFFFFF;
   border-radius: 24px;
-  margin-top: 40px;
+  // margin-top: 40px;
   padding: 25px 25px;
   flex-wrap: wrap;
   img {
@@ -28,4 +28,9 @@
     font-weight: 700;
     color: #A23E48;
   }
+}
+
+
+.profile-action {
+  margin: 24px 0;
 }

@@ -1,15 +1,72 @@
 <div class="row">
+  <!-- profile div on the left -->
   <div class="col-3">
     <%= render 'shared/profile_div' %>
   </div>
+
   <div class="col-6">
-    <div class="profile-div">
-      <p>test</p>
+    <!-- post box -->
+    <div class="post--container mb-5 p-3">
+      <%= render 'shared/post-feed_new' %>
+    </div>
+
+    <!-- main container -->
+    <div class="feed--container p-3" id="main-container">
+      <div class="profile-nav" style="width: 70%">
+        <h5 class="profile-nav-item" id="about-me">about me</h5>
+        <span class="dot"></span>
+        <h5 class="profile-nav-item active" id="activity">activity</h5>
+        <span class="dot"></span>
+        <h5 class="profile-nav-item" id="friends">friends</h5>
+        <span class="dot"></span>
+        <h5 class="profile-nav-item" id="jams">jams</h5>
+      </div>
+
+      <!-- about me nav -->
+      <div id="about-me-card" style="display: none;">
+        <%= render 'shared/profile_about_me' %>
+      </div>
+
+      <!-- activity nav -->
+      <div id="activity-card">
+        <% if @posts.empty? %>
+          <div style="display: flex; justify-content: center; align-items: center; margin: 20px;">
+            <%= image_tag 'no_posts_icon.svg', style: "width: 10%; margin: 15px;" %>
+            <p>You didn't posted anything yet</p>
+          </div>
+        <% else %>
+          <%= render 'shared/post_display' %>
+        <% end %>
+      </div>
+
+      <!-- friends nav -->
+      <div id="friends-card" style="display: none;">
+        <p>friends</p>
+      </div>
+
+      <!-- jams nav -->
+      <div id="jams-card" style="display: none;">
+        <p>jams</p>
+      </div>
     </div>
   </div>
-  <div class="col-3">
-    <div class="profile-div">
-      <p>test</p>
+
+  <div class="col-lg-3 col-sm-12">
+    <!-- search bar on the left -->
+    <div class="search--container mb-5">
+      <%= render 'shared/search_bar' %>
+    </div>
+
+    <!-- container with messages and notifications -->
+    <div class="msg--container_title mb-1">
+      <div class="container d-flex justify-content-around align-items-center">
+        <h1>messages</h1>
+        <span class="dot"></span>
+        <h1>notifications</h1>
+      </div>
+    </div>
+
+    <div class="msg--container p-3">
     </div>
   </div>
 </div>

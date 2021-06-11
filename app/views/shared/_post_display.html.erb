@@ -1,14 +1,14 @@
 <div class="container">
 <% @posts.each do |post| %>
   <div class="row">
-    <div class="col-xs-12 col-sm-6 offset-sm-3 post-container">
+    <div class="col-12 post-container">
       <div class="post-header d-flex">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/dedemenezes", class: 'avatar' %>
         <h5><%= post.user.first_name  %> <%= post.user.last_name  %></h5>
         <p>@<%= post.user.username %> <span><%= distance_of_time_in_words(Time.now, post.created_at) %></span></p>
       </div>
       <div class="post-content">
-        <div class="post-text text-center">
+        <div class="post-text">
           <h4><%= post.content %></h4>
         </div>
         <div class="post-images text-center">
@@ -17,7 +17,7 @@
               <%= cl_video_tag "#{photo.key}", controls: true, width: 300, id: "video-post", onplay: "setNewSize()" %>
             <% else %>
               <%= cl_image_tag "#{photo.key}", width: 300, id: "img-post" %>
-            <% end %>  
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -45,15 +45,16 @@
             <% end %>
             <span>
               53
-            </span> 
+            </span>
           </li>
           <li class="list-inline-item">
             <%= link_to '#' do %>
               <%= cl_image_tag 'share-icon.png', style: 'width: 0.8rem', remote: true %>
-            <% end %>         
-          </li>      
+            <% end %>
+          </li>
         </ul>
       </div>
+      <%= post != @posts.last ? "<hr>".html_safe : "" %>
     </div>
   </div>
 <% end %>
@@ -64,5 +65,5 @@
     const videoPlayer = document.getElementById('video-post')
     videoPlayer.width = 524;
   };
-  
+
 </script>

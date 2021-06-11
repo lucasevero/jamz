@@ -1,0 +1,12 @@
+<% @chat_memberships.each do |chat_membership| %>
+  <%= link_to chatroom_path(chat_membership.chatroom) do %>
+    <% memberships = ChatMembership.where(chatroom: chat_membership.chatroom_id) %>
+    <% if memberships.first.user.username == current_user.username %>
+      <%= memberships.second.user.username %>
+    <% else %>
+      <%= memberships.first.user.username %>
+    <% end %>
+  <% end %>
+<% end %>
+
+

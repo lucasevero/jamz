@@ -1,57 +1,65 @@
-<div class="container mt-5" style="max-width: 90%">
+<div class="row ">
+  <div class=" col-12 col-lg-3 col-sm-12 pe-1 ps-1">
 
-  <div class="row row-cols-3">
+    <div class="user--container d-none d-lg-block">
 
-    <div class="col-lg-3">
-
-      <div class="user-container">
-
-      </div>
+      <%= render 'shared/profile_div' %>
 
     </div>
 
-    <div class="col-lg-6">
+     <div class="search--container mb-3 d-block d-lg-none">
 
-      <div class="post-container mb-5">
-
-        <%= render 'shared/posts-feed' %>
+      <%= render 'shared/search_bar' %>
 
       </div>
 
-      <div class="title-feed-container mb-2">
-        <div class="container d-flex justify-content-around align-items-center">
+  </div>
+
+  <div class="col-lg-6 col-sm-12">
+
+    <div class="post--container mb-3 p-3">
+
+      <%= render 'shared/post-feed_new' %>
+
+    </div>
+
+    <div class="feed--container_title mb-1">
+       <div class="container d-flex justify-content-around align-items-center">
           <h1>main feed</h1>
           <span class="dot"></span>
           <h1>profile feed</h1>
         </div>
-      </div>
-
-      <div class="feed-container">
-
-      </div>
-
     </div>
 
-    <div class="col-lg-3">
+    <div class="feed--container p-3">
 
-      <div class="search-container mb-5">
-
-      </div>
-
-      <div class="title-msgs-container mb-2">
-        <div class="container d-flex justify-content-around align-items-center">
-          <h1>messages</h1>
-          <span class="dot"></span>
-          <h1>notifications</h1>
-        </div>
-      </div>
-
-      <div class="msg-container">
-
-      </div>
+      <%= render 'shared/post_display' %>
 
     </div>
 
   </div>
 
+  <div class="col-lg-3 col-sm-12">
+
+     <div class="search--container mb-5 d-none d-lg-block">
+
+      <%= render 'shared/search_bar' %>
+
+      </div>
+
+      <div class="msg--container_title mb-1 d-none d-lg-block">
+        <div class="container d-flex justify-content-around align-items-center">
+          <h1>msgs</h1>
+          <span class="dot"></span>
+          <h1>not</h1>
+        </div>
+      </div>
+
+      <div class="msg--container p-3 d-none d-lg-block">
+
+      </div>
+
+  </div>
+
 </div>
+
