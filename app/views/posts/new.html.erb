@@ -16,7 +16,7 @@
               <%= f.input :photos, as: :file, input_html: { multiple: true }, id: 'file-upload', class: 'photo_upload', label: false %>
             </span>
            </label>
-          <%= f.submit "post", class: "btn-post  btn-bg" %>
+          <%= f.submit "post", class: "btn-post  btn-bg", remote: true %>
         </div>
         <% end %>  
       </div>
