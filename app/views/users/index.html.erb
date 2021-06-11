@@ -28,7 +28,7 @@
               <div class="user-instruments">
                 <p>Plays:</p>
                 <% user.skills.each do |skill| %>
-                  <p><%= skill.instrument.name %> | <%= skill.experience %></p>
+                  <p><%= skill.instrument %> | <%= skill.experience %></p>
                 <% end %>
               </div>
             </div>
