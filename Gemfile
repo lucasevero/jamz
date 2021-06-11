@@ -28,15 +28,23 @@ gem 'redis', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# Devise handles the user subscription to the website
 gem 'devise'
 
+# Generate Longitude and Latitude from specific address
 gem 'geocoder'
 
+# Authorization
 gem 'pundit'
 
+# Search Engine
 gem 'pg_search', '~> 2.3.0'
 
+# Fake seeds
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
+# Javascript framework for Rails
+gem 'stimulus-rails'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
