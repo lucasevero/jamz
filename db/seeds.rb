@@ -11,15 +11,10 @@ require 'faker'
 puts 'Cleaning DB...'
 
 User.destroy_all
-Instrument.destroy_all
 
 puts 'Done!'
 
 puts 'Seeding...'
-
-Instrument::INSTRUMENTS.each do |name|
-  Instrument.create!(name: name)
-end
 
 user1 = User.new(
   email: 'danilo@castro.com',
@@ -30,7 +25,7 @@ user1 = User.new(
   address: 'Praça Radial Sul 90',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
     }
   )
 
@@ -45,7 +40,7 @@ user2 = User.new(
   address: 'Rua Bambina 105',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
     }
   )
 
@@ -57,10 +52,10 @@ user3 = User.new(
   username: 'carlavaldivia',
   first_name: 'Carla',
   last_name: 'Valdivia',
-  address: 'Rua São Clemente 70',
+  address: 'Rua São Clemente 272',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
     }
   )
 
@@ -72,10 +67,10 @@ user4 = User.new(
   username: 'lucasevero',
   first_name: 'Luca',
   last_name: 'Severo',
-  address: 'Rua Santa Clara 256',
+  address: 'Rua Santa Clara 33',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
     }
   )
 
@@ -87,10 +82,10 @@ user5 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name ,
   last_name: Faker::Name.last_name,
-  address: 'Avenida Nossa Senhora de Copacabana 1189',
+  address: 'Avenida Nossa Senhora de Copacabana 435',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
     }
   )
 
@@ -102,10 +97,10 @@ user6 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
-  address: 'Avenida Visconde de Pirajá 568',
+  address: 'Avenida Visconde de Pirajá 321',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
     }
   )
 
@@ -121,7 +116,7 @@ user7 = User.new(
   address: 'Rua das Laranjeiras 336',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
     }
   )
 
@@ -134,10 +129,10 @@ user8 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
-  address: 'Rua Barata Ribeiro 200',
+  address: 'Rua Barata Ribeiro 370',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
     }
   )
 
@@ -150,10 +145,10 @@ user9 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
-  address: 'Rua Vinicius de Morais 35',
+  address: 'Rua Vinicius de Morais 49',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
     }
   )
 
@@ -165,10 +160,10 @@ user10 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
-  address: 'Rua Dona Mariana 112',
+  address: 'Rua Dona Mariana 182',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: ['Beginner', 'Intermediate', 'Pro'].sample , instrument_id: (1..4).to_a.sample.to_s }
+    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
     }
   )
 
