@@ -7,4 +7,8 @@ class Post < ApplicationRecord
   validates :content, length: { minimum: 1, maximum: 140 }
 
   has_many_attached :photos
+
+  def has_like?(user)
+    likes.find_by(user: user).present?
+  end
 end
