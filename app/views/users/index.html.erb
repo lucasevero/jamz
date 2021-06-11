@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="profile-column col-3">
+  <div class="profile-column col-sm-4 col-lg-3">
     <%= render 'shared/profile_div' %>
   </div>
-  <div class="search-column col-6">
+  <div class="search-column col-sm-8 col-lg-6">
     <div class="">
       <div class="search-bar">
         <%= form_tag users_path, method: :get, class: "d-flex w-100" do %>
@@ -19,7 +19,7 @@
       <div class="search-result mt-3">
         <div class="row justify-content-start">
           <% @users.each do |user| %>
-            <div class="user-card d-flex flex-column align-items-center col-3 text-center">
+            <div class="user-card d-flex flex-column align-items-center col-md-8 col-lg-3 text-center">
               <%= cl_image_tag display_photo(user), class: "avatar-medium" %>
               <h3 class="full-name mt-3"><%= user.first_name %> <%= user.last_name %></h3>
               <%= link_to user_path(user) do %>
@@ -38,7 +38,7 @@
     </div>
   </div>
   <div id="map"
-     class="map-column col-3"
+     class="map-column col-lg-3"
      style="width: 100%; height: 100vh;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
