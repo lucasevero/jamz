@@ -6,7 +6,6 @@ class User < ApplicationRecord
   has_many :chat_memberships, dependent: :destroy
   has_many :chatrooms, through: :chat_memberships
   has_many :skills, dependent: :destroy
-  has_many :instruments, through: :skills
   has_many :posts, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
@@ -14,7 +13,6 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   accepts_nested_attributes_for :skills
-  accepts_nested_attributes_for :instruments
 
   include PgSearch::Model
   pg_search_scope :global_search,
