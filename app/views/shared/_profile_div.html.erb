@@ -1,6 +1,8 @@
 <div class="profile-div">
   <div class="gear_wheel_div">
-    <%= image_tag 'gear_wheel.svg', id: "gear_wheel" %>
+    <%= link_to edit_user_registration_path do %>
+      <%= image_tag 'gear_wheel.svg', id: "gear_wheel" %>
+    <% end %>
   </div>
   <div id="profile-img">
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large" %>
