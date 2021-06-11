@@ -81,6 +81,8 @@ document.addEventListener('turbolinks:load', () => {
 
   initAutocomplete();
 
+  userChat();
+
 });
 
 // Function for RESIZE video is INSIDE THE posts/index.html.erb
