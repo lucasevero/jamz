@@ -1,0 +1,40 @@
+<div class="profile-nav-container">
+  <!-- location -->
+  <% if @user.address %>
+    <div class="card-about">
+      <%= image_tag 'location_icon.svg', class: "about-me-icon" %>
+      <div class="about-text">
+        <h5>location:</h5>
+        <p><%= @user.address %></p>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- genres -->
+  <% unless @user.genres.empty? %>
+    <div class="card-about">
+      <%= image_tag 'headphone_icon.svg', class: "about-me-icon" %>
+      <div class="about-text">
+        <h5>what I listen to:</h5>
+        <p>
+          <% @user.genres.each do |genre| %>
+            <%= genre.name %>;
+          <% end %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+
+  <!-- skills -->
+  <% unless @user.skills.empty? %>
+    <div class="card-about">
+      <%= image_tag 'piano_icon.svg', class: "about-me-icon" %>
+      <div class="about-text">
+        <h5>what I play:</h5>
+        <% @user.skills.each do |skill| %>
+          <p><%= skill.instrument %>; <%= skill.experience %></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
