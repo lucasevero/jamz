@@ -5,7 +5,7 @@
     <% end %>
   </div>
   <div id="profile-img">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large" %>
+    <%= cl_image_tag display_photo(current_user), aspect_ratio: 1, crop: :fill, class: "avatar-large" %>
   </div>
   <div style="text-align: center;">
     <h2 class="red-title"><%= current_user.first_name + ' ' + current_user.last_name %></h2>
