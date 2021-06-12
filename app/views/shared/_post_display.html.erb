@@ -1,6 +1,6 @@
 <div class="container">
 <% @posts.each do |post| %>
-  <div class="row">
+  <div class="row"  id="post-<%= post.id %>">
     <div class="col-12 post-container">
       <div class="post-header d-flex">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/dedemenezes", class: 'avatar' %>
@@ -21,19 +21,23 @@
           <% end %>
         </div>
       </div>
-      <div class="post-action" id="post-<%= post.id %>">
+      <div class="post-action">
         <ul class="list-inline">
           <li class="list-inline-item" data-controller="like">
             <% if post.has_like?(current_user) %>
-              <%= link_to like_path(post), method: "DELETE" do %>
-                <%= cl_image_tag 'like-icon.png', data_like_target: "like", class: 'post-icon', remote: true %>
+              <%= link_to like_path(post), method: "DELETE", remote: true do %>
+                <small data-like-target="like">
+                  <%= cl_image_tag 'like-icon.png', class: 'post-icon', remote: true %>
+                </small>
               <% end %>
             <% else %>
-                <%= link_to likes_path(post), method: "POST" do %>
+                <%= link_to likes_path(post), method: "POST", remote: true do %>
+                <small data-like-target="like">
                   <%= cl_image_tag 'like-icon.png', data_like_target: "like", class: 'post-icon', remote: true %>
+                </small>
                 <% end %>
             <% end %>
-            <span>
+            <spa data-action="click->like#refresh">
               <%= post.likes.count %>
             </span>
           </li>
