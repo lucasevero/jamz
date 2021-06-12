@@ -26,15 +26,11 @@
           <li class="list-inline-item" data-controller="like">
             <% if post.has_like?(current_user) %>
               <%= link_to like_path(post), method: "DELETE", remote: true do %>
-                <small data-like-target="like">
-                  <%= cl_image_tag 'like-icon.png', class: 'post-icon', remote: true %>
-                </small>
+                <%= cl_image_tag 'like-icon.png', class: 'post-icon', remote: true %>
               <% end %>
             <% else %>
                 <%= link_to likes_path(post), method: "POST", remote: true do %>
-                <small data-like-target="like">
-                  <%= cl_image_tag 'like-icon.png', data_like_target: "like", class: 'post-icon', remote: true %>
-                </small>
+                <%= cl_image_tag 'like-icon.png', data_like_target: "like", class: 'post-icon', remote: true %>
                 <% end %>
             <% end %>
             <spa data-action="click->like#refresh">

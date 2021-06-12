@@ -43,12 +43,16 @@ gem 'pg_search', '~> 2.3.0'
 # Fake seeds
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
+# Rendering form with errors using tubrolinks
+gem 'turbolinks_render'
+
 # Javascript framework for Rails
 gem 'stimulus-rails'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
