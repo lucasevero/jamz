@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # Se quebrar voltar com a rota sem nestar :posts
   resources :groups, only: [:index, :show, :new, :create]
-  resources :posts, only: [:index, :new, :create]
+  resources :posts, only: [:index, :create]
 
   resources :users, only: [:index, :show] do
     collection do

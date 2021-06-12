@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   include ActionView::Helpers::DateHelper
   
   def index
-    @posts = Post.all.order(updated_at: :desc)
+    @posts = Post.includes(:user).order(updated_at: :desc)
   end
 
   def new
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post.group = post_params[:group] if params[:group].present?
     authorize @post
     if @post.save
-      redirect_to posts_path
+      redirect_to feed_users_path
     else
       render :new
     end

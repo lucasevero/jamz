@@ -1,4 +1,4 @@
-<%= simple_form_for @post do |f| %>
+<%= simple_form_for @post, remote: true do |f| %>
   <div class="form--input">
     <%= f.input :content, input_html: { class: "form--input_text" }, placeholder: "How do you sound like today?", label: false %>
   </div>
