@@ -19,9 +19,16 @@
     </div>
     <div class="profile-action">
       <% if params[:id].to_i != current_user.id && params[:action] == "show" && params[:controller] == 'users' %>
-        <%= link_to chatrooms_path(user_id: params[:id]), method: 'POST', class: 'btn-msg' do %>
-          <i class="fas fa-comments"></i>
-          Connect
+        <% if Chatroom.chatroom_exist?(@user, current_user) %>
+          <%= link_to chatroom_path(Chatroom.set_chatroom(@user, current_user)), class: 'btn-msg' do %>
+            <i class="fas fa-comments"></i>
+            Connect
+          <% end %>
+        <% else %>
+          <%= link_to chatrooms_path(user_id: params[:id]), method: "POST", class: 'btn-msg' do %>
+            <i class="fas fa-comments"></i>
+            Connect
+          <% end %>
         <% end %>
       <% end %>
     </div>
