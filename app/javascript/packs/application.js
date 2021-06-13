@@ -43,7 +43,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 
 // Code to add preview when uploading file
 const input = document.getElementById('post_photos')
-const preview = document.getElementById('previews')
+const previews = document.getElementById('previews')
 
 
 // se quiser improve pode display more
@@ -52,7 +52,8 @@ const displayPreview = (input) => {
   if (input.files && input.files[0]) {
     const reader = new FileReader();
     reader.onload = (event) => {
-      document.getElementById('photo-preview').src = event.currentTarget.result;
+      previews.insertAdjacentHTML('beforeend', `<img width="100" height="100" id="photo-preview" src="${event.currentTarget.result}">`)
+      // document.getElementById('photo-preview').src = event.currentTarget.result;
     }
     reader.readAsDataURL(input.files[0])
     document.getElementById('photo-preview').classList.remove('hidden');
@@ -61,9 +62,18 @@ const displayPreview = (input) => {
 
 if(input){
   input.addEventListener('change', (event) => {
-  displayPreview(input)
+    if(input.files[0].type.split("/")[0] == 'image'){
+      console.log(input.files[0].type.split("/")[0] == 'image')
+      displayPreview(input)
+    }
   });
 };
+
+// for (var i = 0; i < files.length; i++) {
+//   var name = files[i].name;
+//   var type = files[i].type;
+//   console.log("Filename: " + name + " , Type: " + type);
+// }
 
 
 document.addEventListener('turbolinks:load', () => {
