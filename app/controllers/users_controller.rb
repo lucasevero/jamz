@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     if params[:query].present?
       @users = User.global_search(params[:query])
     else
-      @users = User.all
+      @users = User.includes(:skills)
     end
 
     @markers = @users.geocoded.map do |user|
