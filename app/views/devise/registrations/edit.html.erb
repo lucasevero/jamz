@@ -148,7 +148,7 @@
 
       <div class="container px-3 d-flex justify-content-center border-0">
           <div id="profile-img">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large" %>
+            <%= cl_image_tag display_photo(current_user), aspect_ratio: 1, crop: :fill, class: "avatar-large" %>
           </div>
       </div>
 
@@ -189,7 +189,7 @@
       <% end %>
 
       <div class="password--container_edit px-3 py-1 border-0 bg-white my-2">
-        <h2 class="px-1 h4">password</h2>
+        <h2 class="px-1 h4">new password</h2>
           <%= f.input :password,
                   hint: "leave it blank if you don't want to change it",
                   required: false,
