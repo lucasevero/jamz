@@ -4,63 +4,63 @@
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    body {
+      background-color: #F7F4F0;
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    .container {
+      margin: 0 auto;
+      width: 70%;
+      text-align: center;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    h1 {
+      color: #A23D48;
+      font-size: 100px;
+      font-weight: bold;
+      margin-top: 24px;
+      margin-bottom: 20px;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    h2 {
+      color: #0E0000;
+      margin-bottom: 32px;
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .btn {
+      text-decoration: none;
+      color: white;
+      background-color: #ba4e58;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+
+    .btn:hover {
+      background-color: #A23D48;
+    }
+
+    .credit {
+      display: block;
+      text-decoration: none;
+      font-size: 12px;
+      color: #0E0000;
+      margin-top: 280px;
+    }
   </style>
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+  <div class="container">
+    <h1>500</h1>
+
+    <img src="images/broken.png" alt="broken record" style="width:280px">
+
+    <h2>No jams to be found here!</h2>
+
+    <a class="btn" href="">Take me back</a>
+
+    <a class="credit" href="https://www.vecteezy.com/free-png/music">Music PNGs by Vecteezy</a>
+
   </div>
 </body>
 </html>
