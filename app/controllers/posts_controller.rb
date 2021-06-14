@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all.order(updated_at: :desc)
+    @like = Like.new
   end
 
   def new
