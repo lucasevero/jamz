@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import 'jquery';
+import 'aos/dist/aos.css';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,11 +36,13 @@ import { initChatroomCable } from '../channels/chatroom_channel'
 
 import { initMapbox } from '../plugins/init_mapbox';
 
-import { initProfileNav } from '../plugins/profile_nav_item'
+import { initProfileNav } from '../plugins/profile_nav_item';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
-import { displayPreview } from '../plugins/displayPreview'
+import { displayPreview } from '../plugins/displayPreview';
+
+import AOS from 'aos';
 
 
 
@@ -58,7 +61,9 @@ document.addEventListener('turbolinks:load', () => {
 
   initAutocomplete();
 
-  displayPreview()
+  AOS.init();
+
+  displayPreview();
 
 });
 

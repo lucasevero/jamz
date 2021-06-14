@@ -25,6 +25,7 @@
   color: $gray;
   padding: 48px 16px;
   margin: 16px 30px;
+  box-shadow: 2px 2px 12px rgb(200, 200, 200);
   h3 {
     font-family: $body-font;
     font-size: 12px;
@@ -34,5 +35,11 @@
     font-family: $body-font;
     font-size: 8px;
     margin: 0;
+  }
+  a {
+    color: #a23d48;
+  }
+  a:hover {
+    color: #f75d6d;
   }
 }
