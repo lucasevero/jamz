@@ -3,8 +3,8 @@
   <div class="chat-content" id="chat-target">
     <% @chat_memberships.each do |chat_membership| %>
       <div data-chatroom-id="<%= chat_membership.chatroom_id %>" class="user-chat" id="chatroom-<%= chat_membership.chatroom_id %>" >
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
         <% memberships = ChatMembership.where(chatroom: chat_membership.chatroom_id) %>
+        <%= cl_image_tag display_photo(memberships.first.user), class: "avatar" %>
         <% if memberships.first.user.username == current_user.username %>
           <p id="chat-action"><%= current_user.username %><% current_user.id %></p>
         <% else %>
