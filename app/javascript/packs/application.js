@@ -80,12 +80,10 @@ document.addEventListener('turbolinks:load', () => {
   initEmojiPicker();
 
   fetchChatroom();
-  
+
   AOS.init();
 
   displayPreview();
-
-
 
 
 });

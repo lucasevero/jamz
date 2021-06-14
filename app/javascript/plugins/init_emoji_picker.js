@@ -6,15 +6,21 @@ const initEmojiPicker = () => {
   const emojiPicker = document.querySelector('emoji-picker');
 
   // Toggle emoji picker on the screen
-  smile.addEventListener("click", event => {
-    pickEmoji.classList.toggle("active");
-  })
+
+  if (smile) {
+    smile.addEventListener("click", event => {
+      pickEmoji.classList.toggle("active");
+    })
+  }
 
   // Select an emoji and insert it in the text input
-  emojiPicker.addEventListener('emoji-click', event => {
-    TextInput.setRangeText(event.detail.unicode);
-      console.log(event.detail.unicode);
+
+  if (emojiPicker) {
+    emojiPicker.addEventListener('emoji-click', event => {
+      TextInput.setRangeText(event.detail.unicode);
+        console.log(event.detail.unicode);
     });
+  };
 
 };
 
