@@ -27,8 +27,4 @@ class ChatroomsController < ApplicationController
     ChatMembership.create(user: app_user, chatroom: @chatroom)
   end
 
-  def check_chatroom
-    @chatroom = Chatroom.find_by(name: "#{@friend.username} - #{current_user.username}").exist?
-  end
-
 end
