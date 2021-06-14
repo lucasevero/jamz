@@ -43,6 +43,8 @@ import { displayPreview } from '../plugins/displayPreview'
 
 import { fetchChatroom } from '../plugins/fetchChatroom';
 
+// import { closeChat } from '../plugins/closeChatroom';
+
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -59,11 +61,10 @@ document.addEventListener('turbolinks:load', () => {
 
   initAutocomplete();
 
-
   fetchChatroom();
   
-  
   displayPreview()
+
 });
 
 

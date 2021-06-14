@@ -1,7 +1,9 @@
 .user-chat{
-  display: flex;  
-  align-items: center;
   margin: 1rem auto;
+  border: 1px solid #A23E48;
+  padding: 0.5rem 0.2rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
   p {
     margin: 0;
     font-size: 0.9rem;
@@ -9,4 +11,9 @@
   img {
     margin-right: 0.5rem;
   }
+}
+
+.specific-chat {
+  display: flex ;
+  align-items: center
 }

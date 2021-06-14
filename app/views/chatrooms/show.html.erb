@@ -1,12 +1,5 @@
 <div id="chatroom">
-  <h1>
-    <% memberships = ChatMembership.where(chatroom: @chatroom.id ) %>
-    <% if memberships.first.user.username == current_user.username %>
-      <%= memberships.second.user.username %>
-    <% else %>
-      <%= memberships.first.user.username %>
-    <% end %>
-  </h1>
+  <p class="back-chat" id="close-chat">all chats</p>
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
       <%= render 'messages/message', message: message %>
