@@ -1,6 +1,12 @@
 .footer {
   background-color: #A23E48;
   color: $my-background;
+  // position: fixed;
+  width: 100%;
+  // bottom: 0;
+  // left: 0;
+  // right: 0;
+  margin-top: auto;
   a {
     margin: 8px;
   }
