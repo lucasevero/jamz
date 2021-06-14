@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import 'jquery';
+import 'aos/dist/aos.css';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,11 +36,22 @@ import { initChatroomCable } from '../channels/chatroom_channel'
 
 import { initMapbox } from '../plugins/init_mapbox';
 
-import { initProfileNav } from '../plugins/profile_nav_item'
+import { initProfileNav } from '../plugins/profile_nav_item';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
-import { displayPreview } from '../plugins/displayPreview'
+import { displayPreview } from '../plugins/displayPreview';
+
+
+// Code to add preview when uploading file
+const input = document.getElementById('post_photos')
+const preview = document.getElementById('previews')
+
+
+// se quiser improve pode display more
+
+import AOS from 'aos';
+
 
 import { fetchChatroom } from '../plugins/fetchChatroom';
 
@@ -63,7 +75,10 @@ document.addEventListener('turbolinks:load', () => {
 
   fetchChatroom();
   
-  displayPreview()
+  AOS.init();
+
+  displayPreview();
+
 
 });
 
