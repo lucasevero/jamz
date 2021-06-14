@@ -83,3 +83,5 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 // Function for RESIZE video is INSIDE THE posts/index.html.erb
+
+import "controllers"
