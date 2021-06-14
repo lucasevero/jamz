@@ -7,7 +7,9 @@
           <%= f.input :content, input_html: { class: "input-post" }, placeholder: "How do you sound like today?", label: false %>
         </div>
         <div id="previews">
-          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+        <!-- For some reason I can't use this video tag like I did with the image -->
+          <%#= video_tag"#", width: 150, height: 240, type: "video/mp4" %>
+          <%= image_tag "", width: 100, class: "hidden", id: "photo-preview" %>
         </div>
         <div class="form-actions">
           <label class="btn btn-default btn-change-avatar">

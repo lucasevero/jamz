@@ -35,35 +35,13 @@ import { initChatroomCable } from '../channels/chatroom_channel'
 
 import { initMapbox } from '../plugins/init_mapbox';
 
-
 import { initProfileNav } from '../plugins/profile_nav_item'
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
-
-// Code to add preview when uploading file
-const input = document.getElementById('post_photos')
-const preview = document.getElementById('previews')
+import { displayPreview } from '../plugins/displayPreview'
 
 
-// se quiser improve pode display more
-
-const displayPreview = (input) => {
-  if (input.files && input.files[0]) {
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      document.getElementById('photo-preview').src = event.currentTarget.result;
-    }
-    reader.readAsDataURL(input.files[0])
-    document.getElementById('photo-preview').classList.remove('hidden');
-  }
-}
-
-if(input){
-  input.addEventListener('change', (event) => {
-  displayPreview(input)
-  });
-};
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -79,6 +57,8 @@ document.addEventListener('turbolinks:load', () => {
   initProfileNav();
 
   initAutocomplete();
+
+  displayPreview()
 
 });
 
