@@ -1,0 +1,41 @@
+<form id="gif-search-form">
+  <input type="text" name="gif-query" placeholder="search" id="gif-search-box" style="width: 100%">
+</form>
+<div id="gif-results"></div>
+
+<script>
+  const API_KEY = "8fLb9qrRkf0LptV0Mnw6jKY0kxewTRtZ";
+  const form = document.getElementById("gif-search-form");
+  const search = document.getElementById("gif-search-box");
+  const results = document.getElementById("gif-results");
+
+  const fetchGifs = () => {
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      let url = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&limit=10&q=`;
+      let string = search.value.trim();
+      url = url.concat(string);
+      results.innerHTML = ""
+      fetch(url)
+      .then(response => response.json())
+      .then((content) => {
+        content.data.forEach((result) => {
+          const img = document.createElement('img');
+          img.src = result.images.downsized.url;
+          img.alt = result.title;
+          img.style = "width: 90%; margin: 10px 0;";
+          results.insertAdjacentElement('beforeend', img);
+        });
+        const images = document.querySelectorAll('#gif-results img');
+        const gifInput = parent.document.getElementById('post_temp_gif_url')
+        images.forEach((image) => {
+          image.addEventListener('click', (event) => {
+            gifInput.value = image.src
+          })
+        })
+      });
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", fetchGifs);
+</script>

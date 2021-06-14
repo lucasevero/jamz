@@ -7,10 +7,11 @@
     <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
   </div>
 
+  <%= f.input :temp_gif_url, as: :hidden %>
+
   <div class="form--input_elements d-flex justify-content-between mx-4">
 
     <div class="form--input_imgs">
-
       <label>
         <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252545/jamz/iconfinder_1976052_gallery_image_images_photo_picture_icon_oem2zf.svg" alt="picture_upload" class="post-emoji"/>
         <span style="display:none;">
@@ -36,6 +37,10 @@
 
   </div>
 <% end %>
+
+<div class="framediv">
+  <iframe src="<%= gif_posts_url %>" frameborder="0"></iframe>
+</div>
 
 
 

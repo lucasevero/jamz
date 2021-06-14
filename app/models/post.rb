@@ -6,6 +6,8 @@ class Post < ApplicationRecord
   validates :content, presence: true
   validates :content, length: { minimum: 1, maximum: 140 }
 
+  attr_accessor :temp_gif_url
+
   has_many_attached :photos
 
   def has_like?(user)
