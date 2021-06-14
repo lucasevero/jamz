@@ -8,6 +8,6 @@
   <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
     <%= f.input :content, label: false, placeholder: "Type your message here..." %>
   <% end %>
-  <%= link_to  "All chats", "#", class: "back-chat close-chat btn-block", id: "close-chat" %>
+  <%= link_to  "Close chat", "#", class: "back-chat close-chat btn-block", id: "close-chat"  %>
 </div>
 

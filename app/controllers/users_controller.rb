@@ -32,6 +32,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @post = Post.new
     @posts = @user.posts
+    @chat_memberships = ChatMembership.where(user: current_user)
     authorize @user
   end
 end
