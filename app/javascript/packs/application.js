@@ -27,6 +27,7 @@ import "bootstrap";
 import 'jquery';
 import 'aos/dist/aos.css';
 
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -41,6 +42,8 @@ import { initProfileNav } from '../plugins/profile_nav_item';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
 import { displayPreview } from '../plugins/displayPreview';
+
+import { initEmojiPicker } from '../plugins/init_emoji_picker';
 
 
 // Code to add preview when uploading file
@@ -70,9 +73,13 @@ document.addEventListener('turbolinks:load', () => {
 
   initAutocomplete();
 
+  initEmojiPicker();
+
   AOS.init();
 
   displayPreview();
+
+
 
 
 });
