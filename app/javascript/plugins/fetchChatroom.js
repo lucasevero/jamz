@@ -1,3 +1,5 @@
+import consumer from "../channels/consumer";
+
 const target = document.getElementById('chat-target');
 const actions = document.querySelectorAll('#chat-action');
 const current_user_id = document.getElementById('current-user-id').innerText
@@ -5,8 +7,10 @@ const current_user_id = document.getElementById('current-user-id').innerText
 const fetchChatroom = () => {
   actions.forEach((action => {
     action.addEventListener('click', (event) => {
-      console.log(event.currentTarget)
-      console.log(action.dataset.id)
+      console.log(event.currentTarget) // Div which event happened
+      console.log(action.dataset.id) // id of the chatroom which event happened
+      const newTarget = document.getElementById(`chatroom-${action.dataset.id}`)
+      console.log(newTarget)
       fetch(`http://localhost:3000/chatrooms/${action.dataset.id}`, { mode: 'no-cors'} )
        .then((response) => {
          return response.text()
@@ -21,8 +25,17 @@ const fetchChatroom = () => {
         // You can now even select part of that html as you would in the regular DOM 
         // Example:
         var docChatroom = doc.getElementById('chatroom');
-        target.innerHTML = "";
-        target.innerHTML = docChatroom.innerHTML
+        newTarget.innerHTML = "";
+        newTarget.innerHTML = docChatroom.innerHTML
+        // a ideia a subscribe AQUI para a broadcast chegar
+        //achar message container e a variavel ID pq nao vem igual
+        const id = messagesContainer.dataset.chatroomId;
+    
+        consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
+          received(data) {
+            messagesContainer.insertAdjacentHTML("beforeend", data);
+          },
+        });
       });
     });
   }));
