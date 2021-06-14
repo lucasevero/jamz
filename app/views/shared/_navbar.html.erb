@@ -10,7 +10,7 @@
     </button>
 
     <% if user_signed_in? %>
-      <div>
+      <div class="d-none d-md-inline d-lg-inline">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <%= link_to "Home", feed_users_path, id: "nav-home", class: "nav-link", data: { turbolinks: false } %>
