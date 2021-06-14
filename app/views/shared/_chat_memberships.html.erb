@@ -7,9 +7,13 @@
           <% memberships = ChatMembership.where(chatroom: chat_membership.chatroom_id) %>
           <%= cl_image_tag display_photo(memberships.first.user), class: "avatar avatar-chat" %>
           <% if memberships.first.user.username == current_user.username %>
-            <p class="chat-action" data-id="<%= chat_membership.chatroom_id %>"><%= memberships.second.user.username %></p>
+            <div class="chat-action" data-id="<%= chat_membership.chatroom_id %>">
+              <%= memberships.second.user.username %>
+            </div>
           <% else %>
-           <p class="chat-action" data-id="<%= chat_membership.chatroom_id %>"><%= memberships.first.user.username %></p>
+            <div class="chat-action" data-id="<%= chat_membership.chatroom_id %>">
+              <%= memberships.first.user.username %>
+            </div>
           <% end %>
         </div>
       </div>
