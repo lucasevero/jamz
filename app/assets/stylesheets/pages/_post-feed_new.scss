@@ -12,8 +12,10 @@
 
 .active {
     display: none;
-    margin-left: 3.75rem;
+    position: relative !important;
+    z-index: 1;
 }
+
 
 
 
