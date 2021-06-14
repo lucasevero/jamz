@@ -5,7 +5,7 @@
       <div data-chatroom-id="<%= chat_membership.chatroom_id %>" class="user-chat" id="chatroom-<%= chat_membership.chatroom_id %>" >
         <div class="specific-chat">
           <% memberships = ChatMembership.where(chatroom: chat_membership.chatroom_id) %>
-          <%= cl_image_tag display_photo(memberships.first.user), class: "avatar avatar-chat" %>
+          <%= cl_image_tag display_photo(memberships.first.user), aspect_ratio: 1, crop: :fill, class: "avatar avatar-chat" %>
           <% if memberships.first.user.username == current_user.username %>
             <div class="chat-action" data-id="<%= chat_membership.chatroom_id %>">
               <%= memberships.second.user.username %>
