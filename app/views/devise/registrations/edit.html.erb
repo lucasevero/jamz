@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -29,11 +29,12 @@
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
   </div>
-=======
+
 <div class="container mt-3">  <!-- <%= resource_name.to_s.humanize %> -->
   <div class="row gx-3">
     <div class="col-12">
   <h2>Edit</h2>
+
 
 
 
@@ -124,15 +125,110 @@
 
 
     </div>
->>>>>>> Stashed changes
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+
+
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+
+      <div class="photo--container_edit p-3 py-1 border-0 bg-white justify-content-center">
+
+        <div class="title d-flex justify-content-between">
+          <h2 class="px-1 h4">profile picture</h2>
+          <label>
+            <p class="text-muted">Edit</p>
+            <span class="d-none">
+              <%= f.input :photo, as: :file %>
+            </span>
+          </label>
+        </div>
+
+      <div class="container px-3 d-flex justify-content-center border-0">
+          <div id="profile-img">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large" %>
+          </div>
+      </div>
+
+      </div>
+
+      <div class="email--container_edit px-3 py-1 border-0 bg-white my-2">
+        <h2 class="px-1 h4">e-mail</h2>
+        <%= f.input :email, required: true, autofocus: true, label: false, label_html: { class: 'text-input_edit' } %>
+      </div>
+
+      <div class="username--container_edit px-3 py-1 border-0 bg-white my-2">
+        <h2 class="px-1 h4">username</h2>
+        <%= f.input :username, required: true, autofocus: true, label: false %>
+      </div>
+
+      <div class="firstname--container_edit px-3 py-1 border-0 bg-white my-2">
+        <h2 class="px-1 h4">first name</h2>
+        <%= f.input :first_name, required: true, autofocus: true, label: false %>
+      </div>
+
+      <div class="lastname--container_edit px-3 py-1 border-0 bg-white my-2">
+        <h2 class="px-1 h4">last name</h2>
+        <%= f.input :last_name, required: true, autofocus: true, label: false %>
+      </div>
+
+      <div class="description--container_edit px-3 py-1 border-0 bg-white my-2">
+        <h2 class="px-1 h4">description</h2>
+        <%= f.input :description, required: true, autofocus: true, label: false %>
+      </div>
+
+      <div class="address--container_edit px-3 py-1 border-0 bg-white my-2">
+        <h2 class="px-1 h4">address</h2>
+        <%= f.input :address, required: true, autofocus: true, id: "user_address", label: false %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+
+      <div class="password--container_edit px-3 py-1 border-0 bg-white my-2">
+        <h2 class="px-1 h4">password</h2>
+          <%= f.input :password,
+                  hint: "leave it blank if you don't want to change it",
+                  required: false,
+                  label: false,
+                  input_html: { autocomplete: "new-password" } %>
+      </div>
+
+      <div class="confirm--container_edit px-3 py-1 border-0 bg-white my-2">
+        <h2 class="px-1 h4">confirm password</h2>
+         <%= f.input :password_confirmation,
+                  required: false,
+                  label: false,
+                  input_html: { autocomplete: "new-password" } %>
+      </div>
+
+      <div class="current--container_edit px-3 py-1 border-0 bg-white my-2">
+        <h2 class="px-1 h4">current password</h2>
+         <%= f.input :current_password,
+                  hint: "we need your current password to confirm your changes",
+                  required: true,
+                  label: false,
+                  input_html: { autocomplete: "current-password" } %>
+      </div>
+
+
+    </div>
+
+    <div class="form-actions btn-post btn-bg mt-3">
+      <%= f.button :submit, "Update" %>
+    </div>
+  <% end %>
+
+  <!-- <h4 class="mt-3">Cancel my account</h3>
+
+  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p> -->
+  <div class="btn-post btn-bg mt-3">
+    <%= link_to "Back", feed_users_path %>
   </div>
-<% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+    </div>
+  </div>
+</div>

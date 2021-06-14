@@ -21,9 +21,13 @@
         <span class="dot"></span>
         <h5 class="profile-nav-item" id="jams">jams</h5>
       </div>
+
+      <!-- about me nav -->
       <div id="about-me-card" style="display: none;">
-        <p>about me</p>
+        <%= render 'shared/profile_about_me' %>
       </div>
+
+      <!-- activity nav -->
       <div id="activity-card">
         <% if @posts.empty? %>
           <div style="display: flex; justify-content: center; align-items: center; margin: 20px;">
@@ -34,9 +38,13 @@
           <%= render 'shared/post_display' %>
         <% end %>
       </div>
+
+      <!-- friends nav -->
       <div id="friends-card" style="display: none;">
         <p>friends</p>
       </div>
+
+      <!-- jams nav -->
       <div id="jams-card" style="display: none;">
         <p>jams</p>
       </div>

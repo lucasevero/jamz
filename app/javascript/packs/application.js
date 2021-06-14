@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import 'jquery';
+import 'aos/dist/aos.css';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,11 +36,11 @@ import { initChatroomCable } from '../channels/chatroom_channel'
 
 import { initMapbox } from '../plugins/init_mapbox';
 
-
-import { initProfileNav } from '../plugins/profile_nav_item'
+import { initProfileNav } from '../plugins/profile_nav_item';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
+import { displayPreview } from '../plugins/displayPreview';
 
 
 // Code to add preview when uploading file
@@ -49,22 +50,10 @@ const preview = document.getElementById('previews')
 
 // se quiser improve pode display more
 
-const displayPreview = (input) => {
-  if (input.files && input.files[0]) {
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      document.getElementById('photo-preview').src = event.currentTarget.result;
-    }
-    reader.readAsDataURL(input.files[0])
-    document.getElementById('photo-preview').classList.remove('hidden');
-  }
-}
+import AOS from 'aos';
 
-if(input){
-  input.addEventListener('change', (event) => {
-  displayPreview(input)
-  });
-};
+
+
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -81,7 +70,13 @@ document.addEventListener('turbolinks:load', () => {
 
   initAutocomplete();
 
+  AOS.init();
+
+  displayPreview();
+
 
 });
 
 // Function for RESIZE video is INSIDE THE posts/index.html.erb
+
+import "controllers"
