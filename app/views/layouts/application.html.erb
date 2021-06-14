@@ -9,7 +9,6 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application' %>
-    
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 
   </head>
@@ -26,6 +25,6 @@
     <% if user_signed_in? %>
       <div id="current-user-id" style="display: none;"><%= current_user.id %></div>
     <% end %>
-    
+
   </body>
 </html>
