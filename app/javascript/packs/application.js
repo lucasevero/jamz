@@ -42,7 +42,16 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 
 import { displayPreview } from '../plugins/displayPreview';
 
+
+// Code to add preview when uploading file
+const input = document.getElementById('post_photos')
+const preview = document.getElementById('previews')
+
+
+// se quiser improve pode display more
+
 import AOS from 'aos';
+
 
 
 
@@ -64,6 +73,7 @@ document.addEventListener('turbolinks:load', () => {
   AOS.init();
 
   displayPreview();
+
 
 });
 
