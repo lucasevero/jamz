@@ -29,6 +29,9 @@
   // height: 50px;
   margin: 0 auto;
   padding-top: 13px;
+  input[type="text"] {
+    width: 100%;
+  }
 }
 
 .form--input {
