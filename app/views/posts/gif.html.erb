@@ -1,5 +1,6 @@
 <form id="gif-search-form">
-  <input type="text" name="gif-query" placeholder="search" id="gif-search-box" style="width: 100%">
+  <input type="text" name="gif-query" placeholder="search" id="gif-search-box">
+  <a id="add-btn">Add</a>
 </form>
 <div id="gif-results"></div>
 
@@ -8,6 +9,9 @@
   const form = document.getElementById("gif-search-form");
   const search = document.getElementById("gif-search-box");
   const results = document.getElementById("gif-results");
+  const addBtn = document.getElementById("add-btn")
+  const gifInput = parent.document.getElementById('post_temp_gif_url');
+  const previewDiv = parent.document.getElementById('previews');
 
   const fetchGifs = () => {
     form.addEventListener("submit", event => {
@@ -23,17 +27,29 @@
           const img = document.createElement('img');
           img.src = result.images.downsized.url;
           img.alt = result.title;
-          img.style = "width: 90%; margin: 10px 0;";
           results.insertAdjacentElement('beforeend', img);
         });
         const images = document.querySelectorAll('#gif-results img');
-        const gifInput = parent.document.getElementById('post_temp_gif_url')
         images.forEach((image) => {
           image.addEventListener('click', (event) => {
-            gifInput.value = image.src
-          })
-        })
+            images.forEach((gif_img) => {
+              gif_img.classList.remove("selected");
+            });
+            image.classList.add("selected");
+          });
+        });
       });
+    });
+    addBtn.addEventListener('click', (event) => {
+      parent.document.getElementById('gif-frame').classList.add("hidden");
+      let selected_image = document.querySelector('.selected');
+      if (selected_image) {
+        gifInput.value = selected_image.src;
+        const previewImg = document.createElement('img');
+        previewImg.src = selected_image.src;
+        previewImg.style = "width: 150px;"
+        previewDiv.insertAdjacentElement('beforeend', previewImg)
+      }
     });
   };
 

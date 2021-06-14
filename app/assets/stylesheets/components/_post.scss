@@ -62,9 +62,14 @@
   width: 1.3rem !important;
 }
 
-.framediv {
-  // background-color: #F8F4F1;
-  // border: 1px solid #A23E48;
-  // position: absolute;
-  // left: 110px;
+iframe {
+  border-radius: 15px;
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 70px;
+  z-index: 9999;
+}
+
+.hidden {
+  display: none;
 }

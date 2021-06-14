@@ -4,7 +4,7 @@
   </div>
 
    <div id="previews">
-    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+    <%= image_tag "", class: "hidden", id: "photo-preview" %>
   </div>
 
   <%= f.input :temp_gif_url, as: :hidden %>
@@ -38,9 +38,8 @@
   </div>
 <% end %>
 
-<div class="framediv">
-  <iframe src="<%= gif_posts_url %>" frameborder="0"></iframe>
-</div>
+<iframe src="<%= gif_posts_url %>" frameborder="0" id="gif-frame" class="hidden"></iframe>
+
 
 
 
