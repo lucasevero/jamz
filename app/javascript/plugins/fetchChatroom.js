@@ -7,8 +7,8 @@ const current_user_id = document.getElementById('current-user-id').innerText
 const fetchChatroom = () => {
   actions.forEach((action => {
     action.addEventListener('click', (event) => {
-      console.log(event.currentTarget) // Div which event happened
-      console.log(action.dataset.id) // id of the chatroom which event happened
+      // console.log(event.currentTarget) ||  Div which event happened
+      // console.log(action.dataset.id) ||  id of the chatroom which event happened
       const newTarget = document.getElementById(`chatroom-${action.dataset.id}`)
       console.log(newTarget)
       fetch(`http://localhost:3000/chatrooms/${action.dataset.id}`, { mode: 'no-cors'} )
@@ -29,7 +29,10 @@ const fetchChatroom = () => {
         newTarget.innerHTML = docChatroom.innerHTML
         // a ideia a subscribe AQUI para a broadcast chegar
         //achar message container e a variavel ID pq nao vem igual
-        const id = messagesContainer.dataset.chatroomId;
+        if(newTarget.innerHTML == docChatroom){
+          const id = messagesContainer.dataset.chatroomId;
+          console.log(id)
+        }
     
         consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
           received(data) {
