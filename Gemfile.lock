@@ -235,12 +235,19 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stimulus-rails (0.2.3)
+      rails (>= 6.0.0)
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
+    turbolinks_render (0.9.21)
+      actionpack (>= 5.2.0)
+      activesupport (>= 5.2.0)
+      railties (>= 5.2.0)
+      turbolinks-source (~> 5.1)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
     unf (0.1.4)
@@ -300,7 +307,9 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  stimulus-rails
   turbolinks (~> 5)
+  turbolinks_render
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers
