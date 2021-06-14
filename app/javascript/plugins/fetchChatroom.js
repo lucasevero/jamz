@@ -13,7 +13,6 @@ const fetchChatroom = () => {
       // console.log(event.currentTarget) ||  Div which event happened
       // console.log(action.dataset.id) ||  id of the chatroom which event happened
       console.log(action)
-
       const newTarget = document.getElementById(`chatroom-${action.dataset.id}`)
       newTarget.style.display = 'block' // Quando fechar tem que display: flex;
       
@@ -46,6 +45,7 @@ const fetchChatroom = () => {
             formMessage.insertAdjacentHTML("beforebegin", data);
           },
         });
+        
         closeChat();
       });
       
