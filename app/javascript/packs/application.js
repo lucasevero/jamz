@@ -53,6 +53,9 @@ const preview = document.getElementById('previews')
 import AOS from 'aos';
 
 
+import { fetchChatroom } from '../plugins/fetchChatroom';
+
+// import { closeChat } from '../plugins/closeChatroom';
 
 
 
@@ -70,6 +73,8 @@ document.addEventListener('turbolinks:load', () => {
 
   initAutocomplete();
 
+  fetchChatroom();
+  
   AOS.init();
 
   displayPreview();
@@ -77,6 +82,5 @@ document.addEventListener('turbolinks:load', () => {
 
 });
 
-// Function for RESIZE video is INSIDE THE posts/index.html.erb
 
-import "controllers"
+// Function for RESIZE video is INSIDE THE posts/index.html.erb
