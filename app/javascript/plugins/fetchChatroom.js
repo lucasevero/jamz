@@ -22,8 +22,10 @@ const fetchChatroom = () => {
           consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
             received(data) {
               formMessage.insertAdjacentHTML("beforeend", data);
+              formMessage.scrollIntoView();
             },
           });
+          console.log(event.target)
           closeChat();
           },
         error: function(data) {}

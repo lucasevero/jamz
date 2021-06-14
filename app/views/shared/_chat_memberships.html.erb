@@ -8,6 +8,7 @@
           <%= cl_image_tag display_photo(memberships.first.user), aspect_ratio: 1, crop: :fill, class: "avatar avatar-chat" %>
           <% if memberships.first.user.username == current_user.username %>
             <div class="chat-action" data-id="<%= chat_membership.chatroom_id %>">
+            <% link_to  "text", "message-#{Chatroom.find(chat_membership.chatroom_id).messages.last.id}" %>
               <%= memberships.second.user.username %>
             </div>
           <% else %>
