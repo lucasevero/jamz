@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   accepts_nested_attributes_for :skills
+  accepts_nested_attributes_for :genres
 
   include PgSearch::Model
   pg_search_scope :global_search,
