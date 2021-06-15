@@ -49,9 +49,9 @@ import { initEmojiPicker } from '../plugins/init_emoji_picker';
 
 import AOS from 'aos';
 
-import { fetchChatroom } from '../chat/fetchChatroom';
+import { fetchChatroom } from '../chat/fetch_chatroom';
 
-import { newChat } from '../chat/createChat';
+import { newChat } from '../chat/create_chat';
 
 import { displayPreview } from '../plugins/displayPreview';
 
