@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = current_user
     @post = Post.new
     @posts = @posts = Post.all.order(updated_at: :desc)
+    @chat_memberships = ChatMembership.where(user: current_user)
     authorize @user
     authorize @post
     authorize @posts
@@ -31,6 +32,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @post = Post.new
     @posts = @user.posts
+    @chat_memberships = ChatMembership.where(user: current_user)
     authorize @user
   end
 end

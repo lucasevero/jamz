@@ -25,17 +25,23 @@
       </label>
 
       <label>
-        <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252545/jamz/iconfinder_1276846_misc_smile_icon_iaiv0h.svg" alt="smile-button" class="post-emoji">
+        <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252545/jamz/iconfinder_1276846_misc_smile_icon_iaiv0h.svg" alt="smile-button" class="post-emoji smile">
 
       </label>
 
     </div>
 
+
+
     <div class="form--input_submit">
       <%= f.submit "Post", class: "btn-post  btn-bg" %>
     </div>
 
+
+
   </div>
+
+  <emoji-picker class="active ml-5"></emoji-picker>
 <% end %>
 
 <iframe src="<%= gif_posts_url %>" frameborder="0" id="gif-frame" class="hidden"></iframe>
