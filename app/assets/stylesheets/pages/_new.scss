@@ -4,7 +4,7 @@
   border-radius: 24px 24px 0 0;
 }
 
-.sign-up {
+.sign-up, .login--session {
   border-radius: 24px;
 }
 
@@ -12,6 +12,12 @@
   border-radius: 24px;
 }
 
-.placeholder-text {
-  color: red;
+.login--title {
+  background-color: $my-red;
+  color: #FFFFFF;
+  border-radius: 24px 24px 0 0;
+}
+
+.form-control.string.email.optional, .form-control.password.optional {
+  border-radius: 24px;
 }
