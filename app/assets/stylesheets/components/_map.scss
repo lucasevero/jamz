@@ -5,6 +5,24 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  padding: 48px 32px !important;
+  border-radius: 16px !important;
+  h3 {
+    font-family: $body-font;
+    font-size: 12px;
+    margin: 0;
+  }
+  p {
+    font-family: $body-font;
+    font-size: 8px;
+    margin: 0;
+  }
+  a {
+    color: #ea5d6b;
+  }
+  a:hover {
+    color: #A23D48;
+  }
 }
 
 #map {
