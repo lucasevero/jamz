@@ -4,13 +4,14 @@
   </div>
 
    <div id="previews">
-    <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+    <%= image_tag "", class: "hidden", id: "photo-preview" %>
   </div>
+
+  <%= f.input :temp_gif_url, as: :hidden %>
 
   <div class="form--input_elements d-flex justify-content-between mx-4">
 
     <div class="form--input_imgs">
-
       <label>
         <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252545/jamz/iconfinder_1976052_gallery_image_images_photo_picture_icon_oem2zf.svg" alt="picture_upload" class="post-emoji"/>
         <span style="display:none;">
@@ -19,7 +20,7 @@
       </label>
 
       <label>
-        <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252546/jamz/iconfinder_315415_gif_file_icon_pxzthc.svg" alt="gif_upload" class="post-emoji" style="width: 36px;">
+        <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252546/jamz/iconfinder_315415_gif_file_icon_pxzthc.svg" alt="gif_upload" class="post-emoji" id="gif-btn" style="width: 36px;">
 
       </label>
 
@@ -42,6 +43,9 @@
 
   <emoji-picker class="active ml-5"></emoji-picker>
 <% end %>
+
+<iframe src="<%= gif_posts_url %>" frameborder="0" id="gif-frame" class="hidden"></iframe>
+
 
 
 

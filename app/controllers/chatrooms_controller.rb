@@ -14,10 +14,10 @@ class ChatroomsController < ApplicationController
     @chatroom.chat_memberships.build(user: current_user)
     # create_membership(@friend)
     # create_membership(current_user)
+    @message = Message.new
+    @chat_memberships = ChatMembership.where(user: current_user)
     authorize @chatroom
-    if @chatroom.save
-      redirect_to chatroom_path(@chatroom)
-    else
+    unless @chatroom.save
       render user_path(@friend)
     end
   end

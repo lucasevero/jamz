@@ -1,0 +1,13 @@
+<div id="chatroom">
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+    <% @chatroom.messages.each do |message| %>
+      <%= render 'messages/message', message: message %>
+    <% end %>
+  </div>
+
+  <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
+    <%= f.input :content, label: false, placeholder: "Type your message here..." %>
+  <% end %>
+  <%= link_to  "Close chat", "#", class: "back-chat close-chat btn-block", id: "close-chat"  %>
+</div>
+
