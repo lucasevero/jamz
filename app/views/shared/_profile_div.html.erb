@@ -25,7 +25,7 @@
             Connect
           <% end %>
         <% else %>
-          <%= link_to chatrooms_path(user_id: params[:id]), method: "POST", class: 'btn-msg' do %>
+          <%= link_to "#", class: 'btn-msg', data: { id: params[:id] }, remote: true do %>
             <i class="fas fa-comments"></i>
             Connect
           <% end %>
