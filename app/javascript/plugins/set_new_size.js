@@ -1,8 +1,11 @@
 const setNewSize = () => {
-  const videoPlayer = document.getElementById('video-post')
-  if(videoPlayer) {
-    videoPlayer.addEventListener('play', (event) => {
-      videoPlayer.width = 524;
+  const videoPlayers = document.querySelectorAll('video-post')
+  if(videoPlayers != null) {
+    videoPlayers.forEach((videoPlayer) => {
+      videoPlayer.addEventListener('change', (event) => {
+        console.log('hi')
+        videoPlayer.width = 524;
+      })
     })
   }
 };

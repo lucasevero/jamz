@@ -19,7 +19,7 @@
         <div class="post-images text-center">
           <% post.photos.each do |photo| %>
             <% if photo.blob.content_type == "video/mp4" %>
-              <%= cl_video_tag "#{photo.key}", controls: true, width: 300, id: "video-post" %>
+              <%= cl_video_tag "#{photo.key}", controls: true, width: 300, id: "video-post", onplay: "setNewSize()" %>
             <% else %>
               <%= cl_image_tag "#{photo.key}", width: 300, id: "img-post" %>
             <% end %>
