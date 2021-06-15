@@ -42,22 +42,18 @@ import { initProfileNav } from '../plugins/profile_nav_item';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
-import { displayPreview } from '../plugins/displayPreview';
-
 import { initEmojiPicker } from '../plugins/init_emoji_picker';
 
+import AOS from 'aos';
 
-// Code to add preview when uploading file
-const input = document.getElementById('post_photos')
-const preview = document.getElementById('previews')
+import { fetchChatroom } from '../chat/fetchChatroom';
+
+import { displayPreview } from '../plugins/displayPreview';
 
 
 // se quiser improve pode display more
 
-import AOS from 'aos';
 
-
-import { fetchChatroom } from '../plugins/fetchChatroom';
 
 // import { closeChat } from '../plugins/closeChatroom';
 
