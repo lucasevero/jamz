@@ -18,7 +18,7 @@
   font-size: 1rem;
   margin-bottom: 0.5rem;
   h5 {
-    margin-right: 1rem;
+    margin-right: 5px;
     font-weight: bold;
     color: #A23E48;
     margin-bottom: 0;
@@ -28,12 +28,18 @@
     color: #9e9e9e;
     margin-bottom: 0;
   }
-
   span {
-    margin: 0 5px;
+    margin-left: 5px;
   }
   img {
     margin-right: 1rem;
+  }
+  a {
+    color: #e25664;
+    margin-left: 5px;
+  }
+  a:hover {
+    color: #a23d48;
   }
 }
 
