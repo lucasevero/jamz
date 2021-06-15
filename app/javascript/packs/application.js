@@ -55,6 +55,8 @@ import { newChat } from '../chat/create_chat';
 
 import { displayPreview } from '../plugins/displayPreview';
 
+import { setNewSize } from '../plugins/set_new_size'
+
 
 // se quiser improve pode display more
 
@@ -89,6 +91,8 @@ document.addEventListener('turbolinks:load', () => {
   displayPreview();
 
   initGifBox();
+
+  setNewSize();
 
 
 });
