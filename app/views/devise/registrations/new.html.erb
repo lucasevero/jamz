@@ -19,13 +19,15 @@
                     class: 'signup--input',
                     input_html: { autocomplete: "email" }%>
 
+
         <div class="row">
           <div class="col-12 col-lg-6 col-md-6">
           <%= f.input :first_name,
                       required: true,
                       label: false,
                       placeholder: 'first name',
-            autofocus: true%>
+                      class: 'signup--input',
+                      autofocus: true%>
           </div>
           <div class="col-12 col-lg-6 col-md-6">
           <%= f.input :last_name,
@@ -81,8 +83,10 @@
 
       </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
+      <!-- <div class="btn-post btn-bg mt-3"> -->
+
+      <div class="form-actions mb-3 text-light">
+        <%= f.button :submit, "Sign up", class: "btn-post btn-bg mx-auto" %>
       </div>
     <% end %>
   </div>
@@ -90,4 +94,6 @@
 </div>
 </div>
 
-<%= render "devise/shared/links" %>
+<div class="mt-5">
+  <%= render "devise/shared/links" %>
+</div>

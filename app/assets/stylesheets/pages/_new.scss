@@ -4,14 +4,10 @@
   border-radius: 24px 24px 0 0;
 }
 
-.sign-up {
+.form-control.string.email.required, .form-control.string.required,
+.form-control.text.required, .form-control.select.optional,
+.form-control.password.required {
   border-radius: 24px;
 }
 
-.signup--input {
-  border-radius: 24px;
-}
 
-.placeholder-text {
-  color: red;
-}
