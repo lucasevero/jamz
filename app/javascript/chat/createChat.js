@@ -15,6 +15,7 @@ const newChat = () => {
         data: `user_id=${createChat.dataset.id}`,
         success: function(data) {
           fetchChatroom()
+          // Se quiser abrir tem que achar e clicar no javascript
         },
         error: function(data) {}
       })
