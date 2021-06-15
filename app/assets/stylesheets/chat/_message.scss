@@ -14,7 +14,37 @@
 }
 
 .author {
-  color: #4C5A5B;
-  font-size: 0.8rem;
+  text-align: start;
+  color: $my-red;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  span {
+    padding: 0px 4px 0px 0;
+  }
+
+  i {
+    padding: 0px 4px 0px 0;
+  }
+
+  p {
+    display: flex;
+    justify-content: flex-start ;
+  }
+}
+
+.author.friend {
+  color: #FF8520;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.author.friend > p {
+  display: flex;
+  justify-content: end;
+  color: $my-gray;
 }
 
