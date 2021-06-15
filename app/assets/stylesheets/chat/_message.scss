@@ -9,8 +9,22 @@
   hyphens: auto;
 }
 
+#messages::-webkit-scrollbar{
+  width: 12px;
+  height: 16px;
+
+}
+
+#messages::-webkit-scrollbar-thumb{
+  background: #a23e48b9;
+  border-radius: 16px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  &:hover{
+    background: #a23e48d9;
+  }
+}
 .message-container {
-  margin: 1rem 0.3rem;
+  margin: 1rem 0.5rem;
 }
 
 .author {
