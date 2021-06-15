@@ -59,7 +59,11 @@
           label: false, prompt: 'Choose your instrument', label_html: { class: 'placeholder-text' } %>
           <%= skill_form.input :experience, as: :select, collection: Skill::EXPERIENCE, label: false,
            prompt: 'Experience', label_html: { class: 'placeholder-text' } %>
+        <% end %>
 
+        <%= f.simple_fields_for :genres do |genre_form| %>
+          <%= genre_form.input :name, as: :select, collection: Genre::GENRES,
+          label: false, prompt: 'Choose a genre', label_html: { class: 'placeholder-text' } %>
         <% end %>
 
         <div class="d-flex justify-content-start mx-1">

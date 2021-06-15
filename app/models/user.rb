@@ -9,12 +9,13 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
-  has_many :genres
+  has_many :genres, dependent: :destroy
   has_many :likes, dependent: :delete_all
 
   has_one_attached :photo
 
   accepts_nested_attributes_for :skills
+  accepts_nested_attributes_for :genres
 
   include PgSearch::Model
   pg_search_scope :global_search,
