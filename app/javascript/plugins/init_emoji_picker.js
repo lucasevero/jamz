@@ -11,6 +11,15 @@ const initEmojiPicker = () => {
     smile.addEventListener("click", event => {
       pickEmoji.classList.toggle("active-emoji");
     })
+    const style = document.createElement('style');
+    style.textContent = `
+    .picker {
+      border-radius: 15px;
+    }
+    input.search {
+      background-color: #FFFFFF;
+    }`
+    emojiPicker.shadowRoot.appendChild(style);
   }
 
   // Select an emoji and insert it in the text input
@@ -18,10 +27,11 @@ const initEmojiPicker = () => {
   if (emojiPicker) {
     emojiPicker.addEventListener('emoji-click', event => {
       TextInput.setRangeText(event.detail.unicode);
-        console.log(event.detail.unicode);
+      TextInput.focus();
+      TextInput.selectionStart = TextInput.selectionEnd = TextInput.value.length
+      console.log(event.detail.unicode);
     });
   };
-
 };
 
 export { initEmojiPicker };
