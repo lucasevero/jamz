@@ -16,4 +16,8 @@ class PostPolicy < ApplicationPolicy
   def feed?
     true
   end
+
+  def gif?
+    true
+  end
 end

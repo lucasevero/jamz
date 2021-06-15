@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Rock+Salt&display=swap');
+
+body {
+  background-color: #F8F4F1;
+  font-family: 'Oxygen', "sans-serif";
+}
+
+#gif-search-form {
+  width: 95%; margin: 0 auto;
+}
+
+#gif-search-box {
+  width: 65%;
+  height: 28px;
+  border: none;
+  border-radius: 15px;
+  font-size: 14px;
+  padding-left: 15px
+}
+
+#gif-results {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 50px;
+}
+
+img {
+  width: 45%;
+  height: 100%;
+  margin: 0.3rem;
+}
+
+#add-btn {
+  font-family: 'Oxygen', 'sans-serif';
+  font-size: 14px;
+  padding: 6px 20px;
+  border-radius: 25px;
+  border: 0px solid #A23E48; // Altered from 1px to 0px
+  color: white;
+  font-weight: lighter;
+  background-size: auto 200%;
+  opacity: 1;
+  transition: 0.3s;
+  background-color: #A23E48;
+  &:hover {
+    background-image: linear-gradient(180deg, #A23E48 0%, #A23E48 0.02%, #FF8520 150%);
+    background-position: bottom center;
+  }
+}
+
+.selected {
+  border: 3px solid #FF8520;
+}
+
+.form-div {
+  position: fixed;
+  background-color: #F8F4F1;
+  width: 100%;
+  padding: 10px 2px;
+  top: 0px;
+}

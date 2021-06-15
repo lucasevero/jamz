@@ -1,0 +1,69 @@
+<div class="form-div">
+  <form id="gif-search-form">
+    <input type="text" name="gif-query" placeholder="search" id="gif-search-box">
+    <a id="add-btn">Add</a>
+  </form>
+</div>
+<div id="gif-results"></div>
+
+<script>
+  const API_KEY = "8fLb9qrRkf0LptV0Mnw6jKY0kxewTRtZ";
+  const form = document.getElementById("gif-search-form");
+  const search = document.getElementById("gif-search-box");
+  const results = document.getElementById("gif-results");
+  const addBtn = document.getElementById("add-btn")
+  const gifInput = parent.document.getElementById('post_temp_gif_url');
+  const previewDiv = parent.document.getElementById('previews');
+
+  const fetchGifs = () => {
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+
+      // create the url
+      let url = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&limit=10&q=`;
+      let string = search.value.trim();
+      url = url.concat(string);
+
+      // clean the results div
+      results.innerHTML = ""
+
+      // fetch the url and display results
+      fetch(url)
+      .then(response => response.json())
+      .then((content) => {
+        content.data.forEach((result) => {
+          const img = document.createElement('img');
+          img.src = result.images.downsized.url;
+          img.alt = result.title;
+          results.insertAdjacentElement('beforeend', img);
+        });
+        const images = document.querySelectorAll('#gif-results img');
+
+        // let a image be selected by the user
+        images.forEach((image) => {
+          image.addEventListener('click', (event) => {
+            images.forEach((gif_img) => {
+              gif_img.classList.remove("selected");
+            });
+            image.classList.add("selected");
+          });
+        });
+      });
+    });
+
+    // add the gif in the post
+    addBtn.addEventListener('click', (event) => {
+      parent.document.getElementById('gif-frame').classList.add("hidden");
+      let selected_image = document.querySelector('.selected');
+      if (selected_image) {
+        gifInput.value = selected_image.src;
+        const previewImg = document.createElement('img');
+        previewImg.src = selected_image.src;
+        previewImg.style = "width: 150px; margin: 10px;"
+        previewDiv.insertAdjacentElement('beforeend', previewImg)
+      }
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", fetchGifs);
+</script>

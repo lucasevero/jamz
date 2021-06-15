@@ -44,6 +44,8 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 
 import { displayPreview } from '../plugins/displayPreview';
 
+import { initGifBox } from '../plugins/init_gifbox';
+
 import { initEmojiPicker } from '../plugins/init_emoji_picker';
 
 
@@ -84,6 +86,8 @@ document.addEventListener('turbolinks:load', () => {
   AOS.init();
 
   displayPreview();
+
+  initGifBox();
 
 
 });
