@@ -8,6 +8,7 @@ const initChatroomCable = () => {
     consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
       received(data) {
         messagesContainer.insertAdjacentHTML("beforeend", data);
+        // Aqui que vai ser feita a comparacao entre quem enviou e quem ta vendo
       },
     });
   }

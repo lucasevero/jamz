@@ -1,4 +1,4 @@
-<div class="message-container" id="message-<%= message.id %>">
+<div class="message-container" data-user-id="<%= message.user_id %>" id="message-<%= message.id %>">
   <%= "<i class='author'>".html_safe if current_user == message.user %>  
   <%= "<i class='author friend'>".html_safe if current_user != message.user %>
           <i class="far fa-comment"></i>
