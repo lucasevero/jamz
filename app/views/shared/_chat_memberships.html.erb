@@ -1,5 +1,5 @@
 <div class="chat-header container" id="chat-trigger">
-  <p style="text-align: center">Messages</p>
+  <h5 style="text-align: center">messages</h5>
   <div class="chat-content" id="chat-target">
     <% @chat_memberships.each do |chat_membership| %>
       <div data-chatroom-id="<%= chat_membership.chatroom_id %>" class="user-chat" id="chatroom-<%= chat_membership.chatroom_id %>" >
