@@ -1,5 +1,7 @@
-import consumer from "../channels/consumer";
 import { closeChat } from "./closeChatroom";
+import { cleanInputMessage } from "./cleanInput";
+
+import consumer from "../channels/consumer";
 import Rails from '@rails/ujs';
 
 
@@ -24,7 +26,7 @@ const fetchChatroom = () => {
               formMessage.insertAdjacentHTML("beforeend", data);
             },
           });
-          console.log(event.target)
+          cleanInputMessage();
           closeChat();
           },
         error: function(data) {}
