@@ -6,13 +6,13 @@ const currentUserId = document.getElementById("current-user-id")
 
 const initNavbar = () => {
   if (window.location.pathname == "/users/feed") {
-    navHome.classList.add("active");
+    navHome.classList.add("active-nav");
   } else if (window.location.pathname == "/groups") {
-    navGroups.classList.add("active");
+    navGroups.classList.add("active-nav");
   } else if (window.location.pathname == `/users/${currentUserId.innerText}/chat_memberships`) {
-    navChatrooms.classList.add("active");
+    navChatrooms.classList.add("active-nav");
   } else if (window.location.pathname == `/users/${currentUserId.innerText}`) {
-    navProfile.classList.add("active");
+    navProfile.classList.add("active-nav");
   };
 }
 
