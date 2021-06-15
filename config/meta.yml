@@ -1,4 +1,4 @@
 meta_product_name: "Jamz"
 meta_title: "Jamz - Connecting Musicians"
 meta_description: "Find fellow musicians to play with - and share your jams with the community!"
-meta_image: "Jamz.svg" # should exist in `app/assets/images/`
+meta_image: "social.jpg" # should exist in `app/assets/images/`
