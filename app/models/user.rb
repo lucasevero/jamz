@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :groups, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
-  has_many :genres
+  has_many :genres, dependent: :destroy
   has_many :likes, dependent: :delete_all
 
   has_one_attached :photo
