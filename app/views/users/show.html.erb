@@ -32,7 +32,7 @@
         <% if @posts.empty? %>
           <div style="display: flex; justify-content: center; align-items: center; margin: 20px;">
             <%= image_tag 'no_posts_icon.svg', style: "width: 10%; margin: 15px;" %>
-            <p>You didn't posted anything yet</p>
+            <p>You haven't posted anything yet</p>
           </div>
         <% else %>
           <%= render 'shared/post_display' %>
@@ -58,13 +58,7 @@
     </div>
 
     <!-- container with messages and notifications -->
-    <div class="msg--container_title mb-1">
-      <div class="container d-flex justify-content-around align-items-center">
-        <h1>messages</h1>
-        <span class="dot"></span>
-        <h1>notifications</h1>
-      </div>
-    </div>
+
 
       <div class="msg--container p-3 d-none d-lg-block" id="feed-chat-container">
         <%= render 'shared/chat_memberships', chat_memberships: @chat_memberships %>
