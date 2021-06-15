@@ -18,10 +18,16 @@
   const fetchGifs = () => {
     form.addEventListener("submit", event => {
       event.preventDefault();
+
+      // create the url
       let url = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&limit=10&q=`;
       let string = search.value.trim();
       url = url.concat(string);
+
+      // clean the results div
       results.innerHTML = ""
+
+      // fetch the url and display results
       fetch(url)
       .then(response => response.json())
       .then((content) => {
@@ -32,6 +38,8 @@
           results.insertAdjacentElement('beforeend', img);
         });
         const images = document.querySelectorAll('#gif-results img');
+
+        // let a image be selected by the user
         images.forEach((image) => {
           image.addEventListener('click', (event) => {
             images.forEach((gif_img) => {
@@ -42,6 +50,8 @@
         });
       });
     });
+
+    // add the gif in the post
     addBtn.addEventListener('click', (event) => {
       parent.document.getElementById('gif-frame').classList.add("hidden");
       let selected_image = document.querySelector('.selected');
