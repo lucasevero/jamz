@@ -19,19 +19,21 @@
       <div class="search-result mt-3">
         <div class="row justify-content-start">
           <% @users.each do |user| %>
-            <div class="user-card d-flex flex-column align-items-center col-md-8 col-lg-3 text-center" data-aos="zoom-in">
-              <%= cl_image_tag display_photo(user), aspect_ratio: 1, crop: :fill, class: "avatar-medium" %>
-              <h3 class="full-name mt-3"><%= user.first_name %> <%= user.last_name %></h3>
-              <%= link_to user_path(user) do %>
-                <p class="username mb-3">@<%= user.username %></p>
-              <% end %>
-              <div class="user-instruments">
-                <p>Plays:</p>
-                <% user.skills.each do |skill| %>
-                  <p><%= skill.instrument %> | <%= skill.experience %></p>
-                <% end %>
-              </div>
-            </div>
+            <%= link_to user_path(user), class: "user-card d-flex flex-column align-items-center col-md-8 col-lg-3 text-center", data: { aos: "zoom-in"} do %>
+
+                <%= cl_image_tag display_photo(user), aspect_ratio: 1, crop: :fill, class: "avatar-medium" %>
+                <h3 class="full-name mt-3"><%= user.first_name %> <%= user.last_name %></h3>
+
+                  <p class="username mb-3">@<%= user.username %></p>
+
+                <div class="user-instruments">
+                  <p>Plays:</p>
+                  <% user.skills.each do |skill| %>
+                    <p><%= skill.instrument %> | <%= skill.experience %></p>
+                  <% end %>
+                </div>
+
+            <% end %>
           <% end %>
         </div>
       </div>

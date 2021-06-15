@@ -9,7 +9,7 @@ const initEmojiPicker = () => {
 
   if (smile) {
     smile.addEventListener("click", event => {
-      pickEmoji.classList.toggle("active");
+      pickEmoji.classList.toggle("active-emoji");
     })
     const style = document.createElement('style');
     style.textContent = `

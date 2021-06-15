@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="navbar-container">
     <% if user_signed_in? %>
-      <%= link_to image_tag('Jamz.svg', style: "width: 100px;"), feed_users_path %>
+      <%= link_to image_tag('Jamz.svg', style: "width: 100px;"), feed_users_path, data: { turbolinks: false } %>
     <% else %>
       <%= link_to image_tag('Jamz.svg', style: "width: 100px;"), root_path %>
     <% end %>

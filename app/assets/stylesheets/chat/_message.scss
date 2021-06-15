@@ -9,12 +9,56 @@
   hyphens: auto;
 }
 
+#messages::-webkit-scrollbar{
+  width: 12px;
+  height: 16px;
+
+}
+
+#messages::-webkit-scrollbar-thumb{
+  background: #a23e48b9;
+  border-radius: 16px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  &:hover{
+    background: #a23e48d9;
+  }
+}
 .message-container {
-  margin: 1rem 0.3rem;
+  margin: 1rem 0.5rem;
 }
 
 .author {
-  color: #4C5A5B;
-  font-size: 0.8rem;
+  text-align: start;
+  color: $my-red;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  span {
+    padding: 0px 4px 0px 0;
+  }
+
+  i {
+    padding: 0px 4px 0px 0;
+  }
+
+  p {
+    display: flex;
+    justify-content: flex-start ;
+  }
+}
+
+.author.friend {
+  color: #FF8520;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.author.friend > p {
+  display: flex;
+  justify-content: end;
+  color: $my-gray;
 }
 
