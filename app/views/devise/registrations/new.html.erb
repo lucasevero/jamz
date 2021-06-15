@@ -61,14 +61,24 @@
            prompt: 'Experience', label_html: { class: 'placeholder-text' } %>
 
         <% end %>
-        <label>
-          <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252545/jamz/iconfinder_1976052_gallery_image_images_photo_picture_icon_oem2zf.svg" alt="picture_upload" class="post-emoji"/>
-          <% f.input :photo, as: :file %>
-        </label>
+
+        <div class="d-flex justify-content-start mx-1">
+          <div>
+            <p>Choose your profile picture:</p>
+          </div>
+
+          <label class="px-2">
+            <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252545/jamz/iconfinder_1976052_gallery_image_images_photo_picture_icon_oem2zf.svg" alt="picture_upload" class="post-emoji"/>
+            <span style="display:none;">
+              <%= f.input :photo, as: :file %>
+            </span>
+          </label>
+        </div>
 
 
 
-        <%= f.input :photo, as: :file, class: "signup--photo" %>
+
+
 
         <div class="row">
           <div class="col-12 col-lg-6 col-md-6">
