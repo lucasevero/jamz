@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 import 'jquery';
 import 'aos/dist/aos.css';
+window.$ = $;
 
 
 // Internal imports, e.g:
@@ -47,6 +48,8 @@ import { initEmojiPicker } from '../plugins/init_emoji_picker';
 import AOS from 'aos';
 
 import { fetchChatroom } from '../chat/fetchChatroom';
+
+import { newChat } from '../chat/createChat';
 
 import { displayPreview } from '../plugins/displayPreview';
 
@@ -76,6 +79,8 @@ document.addEventListener('turbolinks:load', () => {
   initEmojiPicker();
 
   fetchChatroom();
+
+  newChat();
 
   AOS.init();
 

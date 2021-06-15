@@ -2,10 +2,10 @@ import consumer from "../channels/consumer";
 import { closeChat } from "./closeChatroom";
 import Rails from '@rails/ujs';
 
-const actions = document.querySelectorAll('.chat-action');
 
 
 const fetchChatroom = () => {
+  const actions = document.querySelectorAll('.chat-action');
   actions.forEach((action => {
     action.addEventListener('click', (event) => {
       const newTarget = document.getElementById(`chatroom-${action.dataset.id}`)
@@ -22,7 +22,6 @@ const fetchChatroom = () => {
           consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
             received(data) {
               formMessage.insertAdjacentHTML("beforeend", data);
-              formMessage.scrollIntoView();
             },
           });
           console.log(event.target)
