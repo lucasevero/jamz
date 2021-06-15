@@ -5,7 +5,7 @@
       <div class="post-header d-flex">
         <%= cl_image_tag display_photo(post.user), aspect_ratio: 1, crop: :fill, class: "avatar" %>
         <h5><%= post.user.first_name  %> <%= post.user.last_name  %></h5>
-        <p>@<%= post.user.username %> <span><%= distance_of_time_in_words(Time.now, post.created_at) %></span></p>
+        <p>@<%= post.user.username %><span><%= distance_of_time_in_words(Time.now, post.created_at) %></span> ago</p>
       </div>
       <div class="post-content">
         <div class="post-text">

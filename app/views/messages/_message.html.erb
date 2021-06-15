@@ -3,7 +3,7 @@
   <%= "<i class='author friend'>".html_safe if current_user != message.user %>
           <i class="far fa-comment"></i>
           <span><%= message.user.username %></span>
-          <small><%= distance_of_time_in_words(Time.now, message.created_at) %></small>
+          <small><%= distance_of_time_in_words(Time.now, message.created_at) %> ago</small>
        </i>
   <%= "<p class='author'>#{message.content}</p>".html_safe if current_user == message.user %>
   <%= "<p class='author friend' style='color:#4C5A5B'>#{message.content}</p>".html_safe if current_user != message.user %>  
