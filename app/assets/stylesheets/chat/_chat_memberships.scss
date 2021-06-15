@@ -1,0 +1,16 @@
+.user-chat{
+  margin: 1rem auto;
+  padding: 0.5rem 0.2rem;
+  p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+  }
+  img {
+    margin-right: 0.5rem;
+  }
+}
+
+.specific-chat {
+  display: flex ;
+  align-items: center
+}

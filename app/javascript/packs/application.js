@@ -27,8 +27,10 @@ import "bootstrap";
 import 'jquery';
 import 'aos/dist/aos.css';
 
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+
 
 import { initNavbar } from '../plugins/init_navbar';
 
@@ -44,6 +46,8 @@ import { displayPreview } from '../plugins/displayPreview';
 
 import { initGifBox } from '../plugins/init_gifbox';
 
+import { initEmojiPicker } from '../plugins/init_emoji_picker';
+
 
 // Code to add preview when uploading file
 const input = document.getElementById('post_photos')
@@ -55,6 +59,9 @@ const preview = document.getElementById('previews')
 import AOS from 'aos';
 
 
+import { fetchChatroom } from '../plugins/fetchChatroom';
+
+// import { closeChat } from '../plugins/closeChatroom';
 
 
 
@@ -72,6 +79,10 @@ document.addEventListener('turbolinks:load', () => {
 
   initAutocomplete();
 
+  initEmojiPicker();
+
+  fetchChatroom();
+
   AOS.init();
 
   displayPreview();
@@ -81,6 +92,5 @@ document.addEventListener('turbolinks:load', () => {
 
 });
 
-// Function for RESIZE video is INSIDE THE posts/index.html.erb
 
-import "controllers"
+// Function for RESIZE video is INSIDE THE posts/index.html.erb
