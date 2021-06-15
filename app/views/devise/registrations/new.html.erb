@@ -19,13 +19,15 @@
                     class: 'signup--input',
                     input_html: { autocomplete: "email" }%>
 
+
         <div class="row">
           <div class="col-12 col-lg-6 col-md-6">
           <%= f.input :first_name,
                       required: true,
                       label: false,
                       placeholder: 'first name',
-            autofocus: true%>
+                      class: 'signup--input',
+                      autofocus: true%>
           </div>
           <div class="col-12 col-lg-6 col-md-6">
           <%= f.input :last_name,
@@ -60,7 +62,24 @@
 
         <% end %>
 
-        <%= f.input :photo, as: :file %>
+        <div class="d-flex justify-content-start mx-1">
+          <div>
+            <p>Choose your profile picture:</p>
+          </div>
+
+          <label class="px-2">
+            <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252545/jamz/iconfinder_1976052_gallery_image_images_photo_picture_icon_oem2zf.svg" alt="picture_upload" class="post-emoji"/>
+            <span style="display:none;">
+              <%= f.input :photo, as: :file %>
+            </span>
+          </label>
+        </div>
+
+
+
+
+
+
         <div class="row">
           <div class="col-12 col-lg-6 col-md-6">
              <%= f.input :password,
@@ -81,8 +100,10 @@
 
       </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
+      <!-- <div class="btn-post btn-bg mt-3"> -->
+
+      <div class="form-actions mb-3">
+        <%= f.button :submit, "Sign up", class: "btn-post btn-bg mx-auto" %>
       </div>
     <% end %>
   </div>
@@ -90,4 +111,6 @@
 </div>
 </div>
 
-<%= render "devise/shared/links" %>
+<div class="mt-5">
+  <%= render "devise/shared/links" %>
+</div>
