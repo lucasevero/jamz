@@ -43,6 +43,8 @@ import { initProfileNav } from '../plugins/profile_nav_item';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
+import { initGifBox } from '../plugins/init_gifbox';
+
 import { initEmojiPicker } from '../plugins/init_emoji_picker';
 
 import AOS from 'aos';
@@ -85,6 +87,8 @@ document.addEventListener('turbolinks:load', () => {
   AOS.init();
 
   displayPreview();
+
+  initGifBox();
 
 
 });

@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     member do
       resources :likes, only: [:create, :destroy]
     end
+
+    collection do
+      get :gif
+    end
   end
 
   resources :users, only: [:index, :show] do
@@ -24,4 +28,6 @@ Rails.application.routes.draw do
   resources :chatrooms, only: [:show, :create] do
     resources :messages, only: :create
   end
+
+
 end
