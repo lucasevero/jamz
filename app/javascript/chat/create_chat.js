@@ -1,5 +1,5 @@
 import Rails from '@rails/ujs';
-import { fetchChatroom } from './fetchChatroom';
+import { fetchChatroom } from './fetch_chatroom';
 
 const newChat = () => {
   //  console.log(createChat.dataset.id)

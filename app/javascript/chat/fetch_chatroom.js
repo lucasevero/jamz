@@ -1,8 +1,10 @@
-import { closeChat } from "./closeChatroom";
+import { closeChat } from "./close_chatroom";
 import { cleanInputMessage } from "./cleanInput";
+import { styleMessage } from "./style_message";
 
 import consumer from "../channels/consumer";
 import Rails from '@rails/ujs';
+
 
 
 
@@ -24,6 +26,7 @@ const fetchChatroom = () => {
           consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
             received(data) {
               formMessage.insertAdjacentHTML("beforeend", data);
+              styleMessage();
             },
           });
           cleanInputMessage();
