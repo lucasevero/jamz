@@ -42,6 +42,8 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 
 import { displayPreview } from '../plugins/displayPreview';
 
+import { initGifBox } from '../plugins/init_gifbox';
+
 
 // Code to add preview when uploading file
 const input = document.getElementById('post_photos')
@@ -73,6 +75,8 @@ document.addEventListener('turbolinks:load', () => {
   AOS.init();
 
   displayPreview();
+
+  initGifBox();
 
 
 });
