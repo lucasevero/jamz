@@ -37,6 +37,7 @@
     margin: 0;
   }
   &:hover {
-    color: #f75d6d;
+    color: $gray;
+    box-shadow: 2px 2px 12px #efc7d1;
   }
 }
