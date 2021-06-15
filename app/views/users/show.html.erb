@@ -1,25 +1,37 @@
 <div class="row">
-  <!-- profile div on the left -->
-  <div class="col-3">
-    <%= render 'shared/profile_div' %>
+
+  <div class=" col-12 col-lg-3 col-sm-12 pe-1 ps-1">
+
+     <div class="user--container d-none d-lg-block">
+      <%= render 'shared/profile_div' %>
+    </div>
+
+      <div class="search--container mb-3 d-block d-lg-none">
+      <%= render 'shared/search_bar' %>
+      </div>
+
   </div>
 
-  <div class="col-6">
-    <!-- post box -->
-    <div class="post--container mb-5 p-3">
+  <div class="col-lg-6 col-sm-12">
+
+    <div class="post--container mb-3 p-3">
       <%= render 'shared/post-feed_new' %>
     </div>
 
-    <!-- main container -->
+       <!-- main container -->
     <div class="feed--container p-3" id="main-container">
       <div class="profile-nav" style="width: 70%">
-        <h5 class="profile-nav-item" id="about-me">about me</h5>
+        <span class="d-inline d-lg-none d-md-none px-2"><i class="fas fa-user"></i></span>
+        <h5 class="profile-nav-item d-none d-lg-inline d-md-inline" id="about-me">about me</h5>
         <span class="dot"></span>
-        <h5 class="profile-nav-item active-nav" id="activity">activity</h5>
+        <span class="d-inline d-lg-none d-md-none px-2"><i class="fas fa-file"></i></span>
+        <h5 class="profile-nav-item active-nav d-none d-lg-inline d-md-inline" id="activity">activity</h5>
         <span class="dot"></span>
-        <h5 class="profile-nav-item" id="friends">friends</h5>
+        <span class="d-inline d-lg-none d-md-none px-2"><i class="fas fa-people-arrows"></i></span>
+        <h5 class="profile-nav-item d-none d-lg-inline d-md-inline" id="friends">friends</h5>
         <span class="dot"></span>
-        <h5 class="profile-nav-item" id="jams">jams</h5>
+        <span class="d-inline d-lg-none d-md-none px-2"><i class="fas fa-music"></i></span>
+        <h5 class="profile-nav-item d-none d-lg-inline d-md-inline" id="jams">jams</h5>
       </div>
 
       <!-- about me nav -->
@@ -51,17 +63,20 @@
     </div>
   </div>
 
-  <div class="col-lg-3 col-sm-12">
-    <!-- search bar on the left -->
-    <div class="search--container mb-5">
+  <div class="col-lg-3 col-sm-12 col-12">
+
+    <div class="search--container mb-5 d-none d-lg-block">
       <%= render 'shared/search_bar' %>
     </div>
 
-    <!-- container with messages and notifications -->
+    <div class="msg--container p-3 d-none d-lg-block" id="feed-chat-container">
+      <%= render 'shared/chat_memberships', chat_memberships: @chat_memberships %>
+    </div>
 
-
-      <div class="msg--container p-3 d-none d-lg-block" id="feed-chat-container">
-        <%= render 'shared/chat_memberships', chat_memberships: @chat_memberships %>
-      </div>
   </div>
-</div>
+
+  </div>
+
+
+
+
