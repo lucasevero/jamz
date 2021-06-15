@@ -88,11 +88,11 @@ document.addEventListener('turbolinks:load', () => {
 
   AOS.init();
 
-  displayPreview();
-
   initGifBox();
 
   setNewSize();
+
+  displayPreview();
 
 
 });
