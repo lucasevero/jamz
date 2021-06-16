@@ -22,7 +22,7 @@
         <% if Chatroom.chatroom_exist?(@user, current_user) %>
           <%= link_to "#", class: 'btn-open-chat' do %>
             <i class="fas fa-comments"></i>
-            Connect
+            Message
           <% end %>
         <% else %>
           <%= link_to "#", class: 'btn-msg', data: { id: params[:id] }, remote: true do %>
