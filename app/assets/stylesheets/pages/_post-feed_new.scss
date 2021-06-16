@@ -26,3 +26,17 @@ emoji-picker {
   --input-border-size: 0;
   --input-padding: 0.25rem 0.25rem 0.25rem 1rem;
 }
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  emoji-picker {
+    left: 20px;
+    width: 94%;
+    height: 170%;
+  }
+
+  .picker {
+    width: 98%;
+    height: 90%;
+  }
+}
