@@ -16,7 +16,9 @@
           <div class="title d-flex justify-content-between">
             <h2 class="px-1 h4">profile picture</h2>
             <label>
-              <p class="text-muted">Edit</p>
+              <p class="text-muted">
+                <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252545/jamz/iconfinder_1976052_gallery_image_images_photo_picture_icon_oem2zf.svg" alt="picture_upload" class="post-emoji"/>
+              </p>
               <span class="d-none">
                 <%= f.input :photo, as: :file %>
               </span>
@@ -25,7 +27,7 @@
 
           <div class="container px-3 d-flex justify-content-center border-0">
               <div id="profile-img">
-                <%= cl_image_tag display_photo(current_user), aspect_ratio: 1, crop: "fill" , class: "avatar-large" %>
+                <%= cl_image_tag display_photo(current_user), aspect_ratio: 1, crop: "fill" , class: "avatar-large", id: "preview-photo" %>
               </div>
           </div>
 
