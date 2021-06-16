@@ -23,7 +23,7 @@
         <div class="post-images text-center">
           <% post.photos.each do |photo| %>
             <% if photo.blob.content_type == "video/mp4" %>
-              <%= cl_video_tag "#{photo.key}", controls: true, id: "video-post", class: "video", onplay: "setNewSize()" %>
+              <%= cl_video_tag "#{photo.key}", controls: true, class: "video-post" %>
             <% else %>
               <%= cl_image_tag "#{photo.key}", class: "img-post" %>
             <% end %>
@@ -32,7 +32,7 @@
       </div>
       <div class="post-action">
         <ul class="list-inline">
-          <li class="list-inline-item" data-controller="like">
+          <li class="list-inline-item">
             <% if post.has_like?(current_user) %>
               <%= link_to like_path(post), method: "DELETE", remote: true do %>
                 <%= cl_image_tag 'liked_icon_iyj0h1.png', class: 'post-icon liked', remote: true %>
@@ -42,7 +42,7 @@
               <%= cl_image_tag 'like-icon.png', data_like_target: "like", class: 'post-icon', remote: true %>
               <% end %>
             <% end %>
-            <spa data-action="click->like#refresh">
+            <span>
               <%= post.likes.count %>
             </span>
           </li>
@@ -51,7 +51,7 @@
               <%= cl_image_tag 'comment-icon.png', class: 'post-icon', remote: true %>
             <% end %>
             <span>
-              228
+              <%= rand(1..50) %>
             </span>
           </li>
           <li class="list-inline-item">
@@ -59,7 +59,7 @@
               <%= cl_image_tag 'foward-icon.png', class: 'post-icon', remote: true %>
             <% end %>
             <span>
-              53
+              <%= rand(1..30) %>
             </span>
           </li>
           <li class="list-inline-item">
@@ -76,10 +76,6 @@
 </div>
 
 <script>
- // const setNewSize = () => {
- //    const videoPlayer = document.getElementById('video-post')
- //    videoPlayer.width = 524;
- //  };
   setTimeout(() => {
     const imagesOfPost = document.querySelectorAll('.img-post')
     imagesOfPost.forEach((image) => {
@@ -88,7 +84,7 @@
       }
     });
 
-    const videosOfPost = document.querySelectorAll('.video')
+    const videosOfPost = document.querySelectorAll('.video-post')
     videosOfPost.forEach((video) => {
       if (video.clientHeight == 600) {
         video.classList.add("tall-video")

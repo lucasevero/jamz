@@ -29,9 +29,7 @@ import 'aos/dist/aos.css';
 window.$ = $;
 
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-
+// Internal imports
 
 import { initNavbar } from '../plugins/init_navbar';
 
@@ -55,18 +53,14 @@ import { newChat } from '../chat/create_chat';
 
 import { displayPreview } from '../plugins/displayPreview';
 
+import { setNewSize } from '../plugins/set_new_size'
 
-// se quiser improve pode display more
+import { openChat } from '../chat/open_chat'
 
-
-
-// import { closeChat } from '../plugins/closeChatroom';
-
+import { previewUserPhoto } from "../plugins/preview_user_photo";
 
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
 
   initNavbar();
 
@@ -84,14 +78,16 @@ document.addEventListener('turbolinks:load', () => {
 
   newChat();
 
-  AOS.init();
+  openChat();
 
-  displayPreview();
+  AOS.init();
 
   initGifBox();
 
+  setNewSize();
+
+  previewUserPhoto() 
+  displayPreview();
+
 
 });
-
-
-// Function for RESIZE video is INSIDE THE posts/index.html.erb
