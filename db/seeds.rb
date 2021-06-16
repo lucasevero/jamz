@@ -7,9 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+require 'json'
+require 'open-uri'
 
 puts 'Cleaning DB...'
 
+Message.destroy_all
+ChatMembership.destroy_all
+Chatroom.destroy_all
 User.destroy_all
 
 puts 'Done!'
@@ -26,6 +31,9 @@ user1 = User.new(
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
     "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    },
+  genres_attributes: {
+    "0" => { name: Genre::GENRES.sample }
     }
   )
 
@@ -40,7 +48,11 @@ user2 = User.new(
   address: 'Rua Bambina 105',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    "0" => { experience: 'Intermediate' , instrument: 'Guitar' }
+    },
+  genres_attributes: {
+    "0" => { name: 'Rock' },
+    "1" => { name: 'Metal' }
     }
   )
 
@@ -52,10 +64,13 @@ user3 = User.new(
   username: 'carlavaldivia',
   first_name: 'Carla',
   last_name: 'Valdivia',
-  address: 'Rua São Clemente 272',
+  address: 'Rua Barão de Lucena 67',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
     "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    },
+  genres_attributes: {
+    "0" => { name: Genre::GENRES.sample }
     }
   )
 
@@ -67,14 +82,22 @@ user4 = User.new(
   username: 'lucasevero',
   first_name: 'Luca',
   last_name: 'Severo',
-  address: 'Rua Santa Clara 33',
+  address: 'Rua Barata Ribeiro 194',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    "0" => { experience: 'Intermediate' , instrument: 'Guitar' }
+    },
+  genres_attributes: {
+    "0" => { name: 'Rock' }
     }
   )
 
 user4.save!
+
+url = "https://randomuser.me/api/?nat=br"
+user_serialized = URI.open(url).read
+random_user = JSON.parse(user_serialized)
+profile_pic = URI.open(random_user['results'][0]['picture']['medium'])
 
 user5 = User.new(
   email: Faker::Internet.email ,
@@ -86,10 +109,19 @@ user5 = User.new(
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
     "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    },
+  genres_attributes: {
+    "0" => { name: Genre::GENRES.sample }
     }
   )
 
+user5.photo.attach(io: profile_pic, filename: "#{user5.username}.png", content_type: 'image/png')
 user5.save!
+
+url = "https://randomuser.me/api/?nat=br"
+user_serialized = URI.open(url).read
+random_user = JSON.parse(user_serialized)
+profile_pic = URI.open(random_user['results'][0]['picture']['medium'])
 
 user6 = User.new(
   email: Faker::Internet.email ,
@@ -101,10 +133,19 @@ user6 = User.new(
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
     "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    },
+  genres_attributes: {
+    "0" => { name: Genre::GENRES.sample }
     }
   )
 
+user6.photo.attach(io: profile_pic, filename: "#{user6.username}.png", content_type: 'image/png')
 user6.save!
+
+url = "https://randomuser.me/api/?nat=br"
+user_serialized = URI.open(url).read
+random_user = JSON.parse(user_serialized)
+profile_pic = URI.open(random_user['results'][0]['picture']['medium'])
 
 
 user7 = User.new(
@@ -117,10 +158,19 @@ user7 = User.new(
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
     "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    },
+  genres_attributes: {
+    "0" => { name: Genre::GENRES.sample }
     }
   )
 
+user7.photo.attach(io: profile_pic, filename: "#{user7.username}.png", content_type: 'image/png')
 user7.save!
+
+url = "https://randomuser.me/api/?nat=br"
+user_serialized = URI.open(url).read
+random_user = JSON.parse(user_serialized)
+profile_pic = URI.open(random_user['results'][0]['picture']['medium'])
 
 
 user8 = User.new(
@@ -133,10 +183,19 @@ user8 = User.new(
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
     "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    },
+  genres_attributes: {
+    "0" => { name: Genre::GENRES.sample }
     }
   )
 
+user8.photo.attach(io: profile_pic, filename: "#{user8.username}.png", content_type: 'image/png')
 user8.save!
+
+url = "https://randomuser.me/api/?nat=br"
+user_serialized = URI.open(url).read
+random_user = JSON.parse(user_serialized)
+profile_pic = URI.open(random_user['results'][0]['picture']['medium'])
 
 
 user9 = User.new(
@@ -149,10 +208,19 @@ user9 = User.new(
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
     "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    },
+  genres_attributes: {
+    "0" => { name: Genre::GENRES.sample }
     }
   )
 
+user9.photo.attach(io: profile_pic, filename: "#{user9.username}.png", content_type: 'image/png')
 user9.save!
+
+url = "https://randomuser.me/api/?nat=br"
+user_serialized = URI.open(url).read
+random_user = JSON.parse(user_serialized)
+profile_pic = URI.open(random_user['results'][0]['picture']['medium'])
 
 user10 = User.new(
   email: Faker::Internet.email ,
@@ -164,10 +232,19 @@ user10 = User.new(
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
     "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    },
+  genres_attributes: {
+    "0" => { name: Genre::GENRES.sample }
     }
   )
 
+user10.photo.attach(io: profile_pic, filename: "#{user10.username}.png", content_type: 'image/png')
 user10.save!
+
+url = "https://randomuser.me/api/?nat=br"
+user_serialized = URI.open(url).read
+random_user = JSON.parse(user_serialized)
+profile_pic = URI.open(random_user['results'][0]['picture']['medium'])
 
 user11 = User.new(
   email: Faker::Internet.email ,
@@ -179,13 +256,22 @@ user11 = User.new(
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
     "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    },
+  genres_attributes: {
+    "0" => { name: Genre::GENRES.sample }
     }
   )
 
+user11.photo.attach(io: profile_pic, filename: "#{user11.username}.png", content_type: 'image/png')
 user11.save!
 
+url = "https://randomuser.me/api/?nat=br"
+user_serialized = URI.open(url).read
+random_user = JSON.parse(user_serialized)
+profile_pic = URI.open(random_user['results'][0]['picture']['medium'])
+
 user12 = User.new(
-  email: Faker::Internet.email ,
+  email: Faker::Internet.email,
   password: '123456',
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
@@ -194,13 +280,47 @@ user12 = User.new(
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
     "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    },
+  genres_attributes: {
+    "0" => { name: Genre::GENRES.sample }
     }
   )
 
+user12.photo.attach(io: profile_pic, filename: "#{user12.username}.png", content_type: 'image/png')
 user12.save!
 
+url = "https://randomuser.me/api/?nat=br"
+user_serialized = URI.open(url).read
+random_user = JSON.parse(user_serialized)
+profile_pic = URI.open(random_user['results'][0]['picture']['medium'])
 
+18.times do
+  url = "https://randomuser.me/api/?nat=br"
+  user_serialized = URI.open(url).read
+  random_user = JSON.parse(user_serialized)
+  profile_pic = URI.open(random_user['results'][0]['picture']['medium'])
 
+  user = User.new(
+    email: random_user['results'][0]['email'],
+    password: '123456',
+    username: random_user['results'][0]['login']['username'],
+    first_name: random_user['results'][0]['name']['first'],
+    last_name: random_user['results'][0]['name']['last'],
+    address: "#{random_user['results'][0]['location']['street']['name']} #{random_user['results'][0]['location']['street']['number']}",
+    description: Faker::GreekPhilosophers.quote,
+    skills_attributes: {
+      "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    },
+    genres_attributes: {
+      "0" => { name: Genre::GENRES.sample }
+    }
+    )
+
+  user.photo.attach(io: profile_pic, filename: "#{user.username}.png", content_type: 'image/png')
+  user.save!
+
+  puts "Saved #{user.username}"
+end
 
 puts 'All done!'
 
