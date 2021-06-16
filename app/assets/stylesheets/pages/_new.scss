@@ -17,7 +17,8 @@
   border-radius: 24px 24px 0 0;
 }
 
-.form-control.string.email.optional, .form-control.password.optional, .form-control.string.email.required  {
+.form-control.string.email.optional, .form-control.password.optional,
+.form-control.string.email.required, .forget--password  {
   border-radius: 24px;
 }
 
