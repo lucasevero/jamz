@@ -20,7 +20,7 @@
     <div class="profile-action">
       <% if params[:id].to_i != current_user.id && params[:action] == "show" && params[:controller] == 'users' %>
         <% if Chatroom.chatroom_exist?(@user, current_user) %>
-          <%= link_to "#", class: 'btn-msg open-chat' do %>
+          <%= link_to "#", class: 'btn-open-chat' do %>
             <i class="fas fa-comments"></i>
             Connect
           <% end %>

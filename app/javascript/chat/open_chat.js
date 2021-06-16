@@ -2,7 +2,7 @@
 // abrir o chat na coluna da direita
 const openChat = () => {
   // get btn to redirect click
-  const button = document.querySelector('.open-chat')
+  const button = document.querySelector('.btn-open-chat')
   if (button) {
     console.log(button)
     button.addEventListener('click', (event) => {
