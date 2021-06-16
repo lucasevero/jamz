@@ -16,14 +16,24 @@
 
             <div class="photo--container_edit p-3 py-1 border-0 bg-white justify-content-center">
 
-              <div class="title d-flex justify-content-between">
-                <h2 class="px-1 h4">profile picture</h2>
-                <label>
-                  <p class="text-muted">Edit</p>
-                  <span class="d-none">
-                    <%= f.input :photo, as: :file %>
-                  </span>
-                </label>
+
+
+          <div class="title d-flex justify-content-between">
+            <h2 class="px-1 h4">profile picture</h2>
+            <label>
+              <p class="text-muted">
+                <img src="https://res.cloudinary.com/rent-an-instrument/image/upload/v1623252545/jamz/iconfinder_1976052_gallery_image_images_photo_picture_icon_oem2zf.svg" alt="picture_upload" class="post-emoji"/>
+              </p>
+              <span class="d-none">
+                <%= f.input :photo, as: :file %>
+              </span>
+            </label>
+          </div>
+
+          <div class="container px-3 d-flex justify-content-center border-0">
+              <div id="profile-img">
+                <%= cl_image_tag display_photo(current_user), aspect_ratio: 1, crop: "fill" , class: "avatar-large", id: "preview-photo" %>
+
               </div>
 
               <div class="container px-3 d-flex justify-content-center border-0">
@@ -95,6 +105,39 @@
             </div>
         <% end %>
 
+
+        <div class="password--container_edit px-3 py-1 border-0 bg-white my-2">
+          <h2 class="px-1 h4">password</h2>
+            <%= f.input :password,
+                    hint: "leave it blank if you don't want to change it",
+                    required: false,
+                    label: false,
+                    input_html: { autocomplete: "new-password" } %>
+        </div>
+
+        <div class="confirm--container_edit px-3 py-1 border-0 bg-white my-2">
+          <h2 class="px-1 h4">confirm password</h2>
+           <%= f.input :password_confirmation,
+                    required: false,
+                    label: false,
+                    input_html: { autocomplete: "new-password" } %>
+        </div>
+
+        <div class="current--container_edit px-3 py-1 border-0 bg-white my-2">
+          <h2 class="px-1 h4">current password</h2>
+           <%= f.input :current_password,
+                    hint: "we need your current password to confirm your changes",
+                    required: true,
+                    label: false,
+                    input_html: { autocomplete: "current-password" } %>
+        </div>
+
+        <div class="form-actions mb-3">
+          <%= f.button :submit, "Update", class: "btn-post btn-bg mx-auto" %>
+        </div>
+
+      </div>
+    <% end %>
 
   </div>
 
