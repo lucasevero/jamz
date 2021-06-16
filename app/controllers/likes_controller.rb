@@ -7,9 +7,9 @@ class LikesController < ApplicationController
     @like.post = @post
     authorize @like
     if @like.save
-      redirect_to feed_users_path( anchor: "post-#{@post.id}" )
+      redirect_to request.referrer
     else
-      render :feed_users
+      redirect_to request.referrer
     end
   end
 
@@ -17,9 +17,9 @@ class LikesController < ApplicationController
     @like = @post.likes.find_by(user: current_user.id)
     authorize @like
     if @like.destroy
-      redirect_to feed_users_path( anchor: "post-#{@post.id}" )
+      redirect_to request.referrer
     else
-      render :feed_users
+      redirect_to request.referrer
     end
   end
   
