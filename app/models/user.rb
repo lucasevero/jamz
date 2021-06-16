@@ -21,7 +21,8 @@ class User < ApplicationRecord
   pg_search_scope :global_search,
     against: [:username, :first_name, :last_name, :address],
     associated_against: {
-      skills: [:experience, :instrument]
+      skills: [:experience, :instrument],
+      genres: [:name]
     },
     using: {
       tsearch: { prefix: true }
