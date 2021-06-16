@@ -1,25 +1,34 @@
 import Rails from '@rails/ujs';
 import { fetchChatroom } from './fetch_chatroom';
+import { openChat } from './open_chat';
+
+const replaceButton = () => {
+  const divAction = document.querySelector('.profile-action')
+  divAction.innerHTML = ""
+  divAction.innerHTML = `<a href="#" class="btn-open-chat">
+                          <i class="fas fa-comments"></i>
+                          Message
+                        </a>`
+}
 
 const newChat = () => {
-  //  console.log(createChat.dataset.id)
-  const createChat = document.querySelectorAll("a[data-id]")[0]
-  if(createChat){
-    createChat.addEventListener('click', (event) => {
+  const button = document.querySelector('.btn-msg')
+  if(button){
+    button.addEventListener('click', (event) => {
       event.preventDefault();
-      // console.log(document.getElementsByName("csrf-token"))
-      // console.log(document.getElementsByName("csrf-token")[0].content)
       Rails.ajax({
         url: "/chatrooms",
         type: "post",
-        data: `user_id=${createChat.dataset.id}`,
+        data: `user_id=${button.dataset.id}`,
         success: function(data) {
+          replaceButton()
+          openChat();
           fetchChatroom()
-          // Se quiser abrir tem que achar e clicar no javascript
         },
         error: function(data) {}
       })
     })
+    
   }
 }
 

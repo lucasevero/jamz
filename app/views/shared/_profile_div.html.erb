@@ -9,7 +9,7 @@
   </div>
   <div style="text-align: center;">
     <h2 class="red-title"><%= @user.first_name + ' ' + @user.last_name %></h2>
-    <p>@<%= @user.username %></p>
+    <p>@<span class="username"><%= @user.username %></span></p>
     <br>
     <p><%= @user.description %></p>
     <br>
@@ -20,7 +20,7 @@
     <div class="profile-action">
       <% if params[:id].to_i != current_user.id && params[:action] == "show" && params[:controller] == 'users' %>
         <% if Chatroom.chatroom_exist?(@user, current_user) %>
-          <%= link_to chatroom_path(Chatroom.set_chatroom(@user, current_user)), class: 'btn-msg' do %>
+          <%= link_to "#", class: 'btn-open-chat' do %>
             <i class="fas fa-comments"></i>
             Connect
           <% end %>

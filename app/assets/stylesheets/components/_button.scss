@@ -69,6 +69,19 @@ a:hover{
   }
 }
 
+.btn-open-chat {
+  padding: 12px 24px;
+  background-image: linear-gradient(180deg, #A23E48 0%, #A23E48 0.02%, #FF8520 250.14%);
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: 0.3s ease-in-out;
+  background-size: auto 125%;
+  &:hover {
+    background-position: bottom center;
+  }
+}
+
 .close-chat {
   padding: 4px 8px;
   background-color: #A23E48;
