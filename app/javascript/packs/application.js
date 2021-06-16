@@ -57,6 +57,8 @@ import { displayPreview } from '../plugins/displayPreview';
 
 import { setNewSize } from '../plugins/set_new_size'
 
+import { openChat } from '../chat/open_chat'
+
 
 // se quiser improve pode display more
 
@@ -85,6 +87,8 @@ document.addEventListener('turbolinks:load', () => {
   fetchChatroom();
 
   newChat();
+
+  openChat();
 
   AOS.init();
 
