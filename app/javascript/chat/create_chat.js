@@ -16,10 +16,16 @@ const newChat = () => {
         type: "post",
         data: `user_id=${button.dataset.id}`,
         success: function(data) {
-          button.classList.toggle('btn-open-chat')
           button.classList.toggle('btn-msg')
           delete button.dataset.remote
-          console.log(button.dataset.remote)
+          divAction = document.querySelector('.profile-action')
+          divAction.innerHTML = ""
+          divAction.innerHTML = `<a href="#" class="btn-open-chat">
+                                  <i class="fas fa-comments"></i>
+                                  Connect
+                                </a>`
+          // button.removeEventListener('click', newChat, false);
+          console.log(button)
           openChat();
           fetchChatroom()
           // Se quiser abrir tem que achar e clicar no javascript
@@ -27,6 +33,7 @@ const newChat = () => {
         error: function(data) {}
       })
     })
+    
   }
 }
 
