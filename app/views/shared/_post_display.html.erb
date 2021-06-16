@@ -76,22 +76,23 @@
 </div>
 
 <script>
- const setNewSize = () => {
-    const videoPlayer = document.getElementById('video-post')
-    videoPlayer.width = 524;
-  };
+ // const setNewSize = () => {
+ //    const videoPlayer = document.getElementById('video-post')
+ //    videoPlayer.width = 524;
+ //  };
+  setTimeout(() => {
+    const imagesOfPost = document.querySelectorAll('.img-post')
+    imagesOfPost.forEach((image) => {
+      if (image.clientHeight == 600) {
+        image.classList.add("tall-image")
+      }
+    });
 
-  const images = document.querySelectorAll('.img-post')
-  images.forEach((image) => {
-    if (image.clientHeight == 600) {
-      image.classList.add("tall-image")
-    }
-  });
-
-  const videos = document.querySelectorAll('.video')
-  images.forEach((video) => {
-    if (video.clientHeight == 600) {
-      video.classList.add("tall-video")
-    }
-  });
+    const videosOfPost = document.querySelectorAll('.video')
+    videosOfPost.forEach((video) => {
+      if (video.clientHeight == 600) {
+        video.classList.add("tall-video")
+      }
+    });
+  }, 500)
 </script>
