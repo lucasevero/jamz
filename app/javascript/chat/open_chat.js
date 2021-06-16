@@ -6,6 +6,7 @@ const openChat = () => {
       const pageUsername = document.querySelector('.username').innerText
       const chatRoom = document.querySelector(`div[data-user="${pageUsername}"]`)
       chatRoom.click();
+
     })
   }
 }

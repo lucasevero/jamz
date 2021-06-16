@@ -7,7 +7,7 @@ const replaceButton = () => {
   divAction.innerHTML = ""
   divAction.innerHTML = `<a href="#" class="btn-open-chat">
                           <i class="fas fa-comments"></i>
-                          Connect
+                          Message
                         </a>`
 }
 
