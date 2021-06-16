@@ -4,7 +4,9 @@
     <div class="col-12 post-container">
       <div class="post-header d-flex justify-content-start">
         <%= cl_image_tag display_photo(post.user), aspect_ratio: 1, crop: :fill, class: "avatar" %>
-        <h5><%= post.user.first_name  %> <%= post.user.last_name  %></h5>
+        <%= link_to user_path(post.user) do %>
+          <h5><%= post.user.first_name  %> <%= post.user.last_name  %></h5>
+        <% end %>
         <p>
           <%= link_to user_path(post.user) do %>
             @<%= post.user.username %>
