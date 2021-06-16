@@ -12,6 +12,9 @@ require 'open-uri'
 
 puts 'Cleaning DB...'
 
+Message.destroy_all
+ChatMembership.destroy_all
+Chatroom.destroy_all
 User.destroy_all
 
 puts 'Done!'
@@ -45,7 +48,7 @@ user2 = User.new(
   address: 'Rua Bambina 105',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    "0" => { experience: 'Intermediate' , instrument: 'Guitar' }
     },
   genres_attributes: {
     "0" => { name: 'Rock' },
@@ -82,7 +85,7 @@ user4 = User.new(
   address: 'Rua Barata Ribeiro 194',
   description: Faker::GreekPhilosophers.quote,
   skills_attributes: {
-    "0" => { experience: Skill::EXPERIENCE.sample , instrument: Skill::INSTRUMENTS.sample }
+    "0" => { experience: 'Intermediate' , instrument: 'Guitar' }
     },
   genres_attributes: {
     "0" => { name: 'Rock' }
@@ -291,7 +294,7 @@ user_serialized = URI.open(url).read
 random_user = JSON.parse(user_serialized)
 profile_pic = URI.open(random_user['results'][0]['picture']['medium'])
 
-10.times do
+18.times do
   url = "https://randomuser.me/api/?nat=br"
   user_serialized = URI.open(url).read
   random_user = JSON.parse(user_serialized)
