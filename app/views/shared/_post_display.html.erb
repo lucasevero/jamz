@@ -2,6 +2,8 @@
 <% @posts.each do |post| %>
   <div class="row"  id="post-<%= post.id %>">
     <div class="col-12 post-container">
+
+      <!-- header -->
       <div class="post-header d-flex justify-content-start">
         <%= cl_image_tag display_photo(post.user), aspect_ratio: 1, crop: :fill, class: "avatar" %>
         <%= link_to user_path(post.user) do %>
@@ -14,6 +16,8 @@
           <span><%= distance_of_time_in_words(Time.now, post.created_at) %></span> ago
         </p>
       </div>
+
+      <!-- content -->
       <div class="post-content">
         <div class="post-text">
           <h4><%= post.content %></h4>
@@ -21,9 +25,9 @@
         <div class="post-images text-center">
           <% post.photos.each do |photo| %>
             <% if photo.blob.content_type == "video/mp4" %>
-              <%= cl_video_tag "#{photo.key}", controls: true, width: 300, class: "video-post" %>
+              <%= cl_video_tag "#{photo.key}", controls: true, class: "video-post" %>
             <% else %>
-              <%= cl_image_tag "#{photo.key}", width: 300, id: "img-post" %>
+              <%= cl_image_tag "#{photo.key}", class: "img-post" %>
             <% end %>
           <% end %>
         </div>
@@ -44,27 +48,27 @@
               <%= post.likes.count %>
             </span>
           </li>
-          <li class="list-inline-item">
-            <%= link_to '#' do %>
-              <%= cl_image_tag 'comment-icon.png', class: 'post-icon', remote: true %>
-            <% end %>
+          <!-- <li class="list-inline-item">
+            <%#= link_to '#' do %>
+              <%#= cl_image_tag 'comment-icon.png', class: 'post-icon', remote: true %>
+            <% # end %>
             <span>
-              <%= rand(1..50) %>
+              <%#= rand(1..50) %>
             </span>
           </li>
           <li class="list-inline-item">
-            <%= link_to '#' do %>
-              <%= cl_image_tag 'foward-icon.png', class: 'post-icon', remote: true %>
-            <% end %>
+            <%#= link_to '#' do %>
+              <%#= cl_image_tag 'foward-icon.png', class: 'post-icon', remote: true %>
+            <% # end %>
             <span>
-              <%= rand(1..30) %>
+              <%#= rand(1..30) %>
             </span>
           </li>
           <li class="list-inline-item">
-            <%= link_to '#' do %>
-              <%= cl_image_tag 'share-icon.png', style: 'width: 0.8rem', remote: true %>
-            <% end %>
-          </li>
+            <%#= link_to '#' do %>
+              <%#= cl_image_tag 'share-icon.png', style: 'width: 0.8rem', remote: true %>
+            <% # end %>
+          </li> -->
         </ul>
       </div>
       <%= post != @posts.last ? "<hr>".html_safe : "" %>
@@ -72,3 +76,21 @@
   </div>
 <% end %>
 </div>
+
+<script>
+  setTimeout(() => {
+    const imagesOfPost = document.querySelectorAll('.img-post')
+    imagesOfPost.forEach((image) => {
+      if (image.clientHeight == 600) {
+        image.classList.add("tall-image")
+      }
+    });
+
+    const videosOfPost = document.querySelectorAll('.video-post')
+    videosOfPost.forEach((video) => {
+      if (video.clientHeight == 600) {
+        video.classList.add("tall-video")
+      }
+    });
+  }, 500)
+</script>

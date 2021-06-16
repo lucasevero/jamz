@@ -53,8 +53,6 @@ import { newChat } from '../chat/create_chat';
 
 import { displayPreview } from '../plugins/displayPreview';
 
-import { setNewSize } from '../plugins/set_new_size'
-
 import { openChat } from '../chat/open_chat'
 
 import { previewUserPhoto } from "../plugins/preview_user_photo";
@@ -86,9 +84,7 @@ document.addEventListener('turbolinks:load', () => {
 
   initGifBox();
 
-  setNewSize();
-
-  previewUserPhoto() 
+  previewUserPhoto();
 
   displayPreview();
 
