@@ -14,8 +14,8 @@
     <p><%= @user.description %></p>
     <br>
     <div class="d-flex justify-content-around">
-      <div><h3 class="red-title">75</h3><h5>friends</h5></div>
-      <div><h3 class="red-title">9</h3><h5>jams</h5></div>
+      <div><h3 class="red-title"><%= rand(1..100) %></h3><h5>friends</h5></div>
+      <div><h3 class="red-title"><%= rand(1..10) %></h3><h5>jams</h5></div>
     </div>
     <div class="profile-action">
       <% if params[:id].to_i != current_user.id && params[:action] == "show" && params[:controller] == 'users' %>
