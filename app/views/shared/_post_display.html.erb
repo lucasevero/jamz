@@ -2,6 +2,8 @@
 <% @posts.each do |post| %>
   <div class="row"  id="post-<%= post.id %>">
     <div class="col-12 post-container">
+
+      <!-- header -->
       <div class="post-header d-flex justify-content-start">
         <%= cl_image_tag display_photo(post.user), aspect_ratio: 1, crop: :fill, class: "avatar" %>
         <h5><%= post.user.first_name  %> <%= post.user.last_name  %></h5>
@@ -12,6 +14,8 @@
           <span><%= distance_of_time_in_words(Time.now, post.created_at) %></span> ago
         </p>
       </div>
+
+      <!-- content -->
       <div class="post-content">
         <div class="post-text">
           <h4><%= post.content %></h4>
@@ -19,9 +23,9 @@
         <div class="post-images text-center">
           <% post.photos.each do |photo| %>
             <% if photo.blob.content_type == "video/mp4" %>
-              <%= cl_video_tag "#{photo.key}", controls: true, width: 300, id: "video-post", onplay: "setNewSize()" %>
+              <%= cl_video_tag "#{photo.key}", controls: true, id: "video-post", class: "video", onplay: "setNewSize()" %>
             <% else %>
-              <%= cl_image_tag "#{photo.key}", width: 300, id: "img-post" %>
+              <%= cl_image_tag "#{photo.key}", class: "img-post" %>
             <% end %>
           <% end %>
         </div>
@@ -77,4 +81,17 @@
     videoPlayer.width = 524;
   };
 
+  const images = document.querySelectorAll('.img-post')
+  images.forEach((image) => {
+    if (image.clientHeight == 600) {
+      image.classList.add("tall-image")
+    }
+  });
+
+  const videos = document.querySelectorAll('.video')
+  images.forEach((video) => {
+    if (video.clientHeight == 600) {
+      video.classList.add("tall-video")
+    }
+  });
 </script>
