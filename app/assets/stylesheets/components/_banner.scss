@@ -6,10 +6,12 @@
 }
 
 .banner h1 {
+  background: -webkit-linear-gradient(90deg, #ffffff 0%, #d6acb0 0.02%, #FF8520 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin: 0;
-  color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 58px;
+  font-size: 2.5rem;
   font-weight: bold;
   font-family: 'Rock Salt', "cursive";
 }
