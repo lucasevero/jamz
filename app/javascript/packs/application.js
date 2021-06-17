@@ -59,11 +59,18 @@ import { previewUserPhoto } from "../plugins/preview_user_photo";
 
 import { easterEgg } from "../channels/jamzOnline";
 
+import { submittingPost } from "../plugins/submitting_post";
+
+
 
 document.addEventListener('turbolinks:load', () => {
   
   easterEgg()
   
+
+  initAutocomplete();
+
+
   initNavbar();
 
   initChatroomCable();
@@ -71,8 +78,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 
   initProfileNav();
-
-  initAutocomplete();
 
   initEmojiPicker();
 
@@ -89,5 +94,7 @@ document.addEventListener('turbolinks:load', () => {
   previewUserPhoto();
 
   displayPreview();
+
+  submittingPost();
 
 });

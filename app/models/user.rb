@@ -26,7 +26,8 @@ class User < ApplicationRecord
     },
     using: {
       tsearch: { prefix: true }
-    }
+    },
+    order_within_rank: "users.updated_at DESC"
 
   validates :description, length: { maximum: 200 }
   validates :address, :username, :first_name, :last_name, presence: true

@@ -24,7 +24,8 @@ class PostsController < ApplicationController
         file = URI.open(@post.temp_gif_url)
         @post.photos.attach(io: file, filename: 'some-image.gif', content_type: 'image/gif')
       end
-      redirect_to feed_users_path
+      redirect_to request.referrer
+      # redirect_to feed_users_path
     else
       render :new
     end

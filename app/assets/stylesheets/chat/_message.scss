@@ -1,7 +1,7 @@
 #messages {
   display: block;
   width: 100%;
-  height: 350px;
+  height: 35vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
   overflow-wrap: break-word;
@@ -10,19 +10,25 @@
 }
 
 #messages::-webkit-scrollbar{
-  width: 12px;
+  width: 6px;
   height: 16px;
 
 }
 
-#messages::-webkit-scrollbar-thumb{
-  background: #a23e48b9;
+#messages::-webkit-scrollbar-thumb {
+  background: #a23e4888;
   border-radius: 16px;
   box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  visibility: hidden;
   &:hover{
-    background: #a23e48d9;
+    background: #a23e4888;
   }
 }
+
+#messages:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
 .message-container {
   margin: 1rem 0.5rem;
 }
