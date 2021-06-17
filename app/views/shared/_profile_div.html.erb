@@ -1,5 +1,5 @@
 <div class="profile-div">
-  <% if params[:id].to_i == current_user.id %>
+  <% if @user == current_user %>
     <div class="gear_wheel_div">
       <%= link_to edit_user_registration_path do %>
         <%= image_tag 'gear_wheel.svg', id: "gear_wheel" %>
