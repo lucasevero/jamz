@@ -62,6 +62,8 @@ import { submittingPost } from "../plugins/submitting_post";
 
 document.addEventListener('turbolinks:load', () => {
 
+  initAutocomplete();
+
   initNavbar();
 
   initChatroomCable();
@@ -69,8 +71,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 
   initProfileNav();
-
-  initAutocomplete();
 
   initEmojiPicker();
 
