@@ -57,9 +57,13 @@ import { openChat } from '../chat/open_chat'
 
 import { previewUserPhoto } from "../plugins/preview_user_photo";
 
+import { easterEgg } from "../channels/jamzOnline";
+
 
 document.addEventListener('turbolinks:load', () => {
-
+  
+  easterEgg()
+  
   initNavbar();
 
   initChatroomCable();
@@ -85,6 +89,5 @@ document.addEventListener('turbolinks:load', () => {
   previewUserPhoto();
 
   displayPreview();
-
 
 });
