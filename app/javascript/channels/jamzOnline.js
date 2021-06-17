@@ -3,11 +3,11 @@ const easterEgg = () => {
 
   const body = document.querySelector('body')
   let timesPressed = 0
-  const start = new Date().getMinutes();
-  let end = start + 3
+  const start = new Date().getSeconds();
+  const end = start + 30
   body.addEventListener('click', (event) => {
       timesPressed++
-      if(timesPressed == 3 && (start - new Date().getMinutes() <= end)){
+      if(timesPressed == 3 && (start - new Date().getSeconds() <= end)){
           console.log('new function can be called')
           body.innerHTML = ""
           body.innerHTML = html_keyboard
