@@ -1,24 +1,26 @@
 .banner {
-  background-size: cover;
-  background-position: center;
+  background-size: cover ;
+  background-position: 50% 54%;
   padding: 24vh 0;
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.02) -37.15%, rgba(0, 0, 0, 0.2) 100%, rgba(255, 255, 255, 0.02) 100%), url("https://res.cloudinary.com/rent-an-instrument/image/upload/v1623257537/banner-bg.jpg");
+  background-image: linear-gradient(180deg, rgba(214, 214, 214, 0.15) 0%, rgba(214, 214, 214, 0.15) 100%), url("http://res.cloudinary.com/rent-an-instrument/image/upload/v1623942593/sc4o83fgqobtlv0k5klh.jpg");
+  /* background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.02) -37.15%, rgba(0, 0, 0, 0.2) 100%, rgba(255, 255, 255, 0.02) 100%), url("http://res.cloudinary.com/rent-an-instrument/image/upload/v1623942593/sc4o83fgqobtlv0k5klh.jpg");*/
 }
 
 .banner h1 {
-  background: -webkit-linear-gradient(90deg, #ffffff 0%, #d6acb0 0.02%, #FF8520 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 0;
+  /* background: -webkit-linear-gradient(90deg, #ffffff 0%, #d6acb0 0.02%, #FF8520 90%); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+  color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 2.5rem;
   font-weight: bold;
-  font-family: 'Rock Salt', "cursive";
+  font-family:  'Oxygen', "sans-serif";;
 }
 
 .banner p {
   font-size: 28px;
   color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  opacity: .9;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0,0.7);
+  margin-bottom: 24px;
 }
