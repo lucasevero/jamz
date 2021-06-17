@@ -1,7 +1,7 @@
 <div class="row ">
   <div class=" col-12 col-lg-3 col-sm-12 pe-1 ps-1">
 
-    <div class="user--container d-none d-lg-block">
+    <div class="user--container d-none d-lg-block" style="position: sticky; top: 20px;">
 
       <%= render 'shared/profile_div' %>
 
@@ -32,8 +32,9 @@
   </div>
 
   <div class="col-lg-3 col-sm-12">
+    <div class="right--container" style="position: sticky; top: 20px;">
 
-     <div class="search--container mb-5 d-none d-lg-block">
+      <div class="search--container mb-5 d-none d-lg-block">
 
       <%= render 'shared/search_bar' %>
 
@@ -47,10 +48,11 @@
         </div>
       </div> -->
 
-      <div class="msg--container p-3 d-none d-lg-block" id="feed-chat-container">
+      <div class="msg--container p-3 d-none d-lg-block" id="feed-chat-container" style="position: absolute;">
         <%= render 'shared/chat_memberships', chat_memberships: @chat_memberships %>
       </div>
 
+    </div>
   </div>
 
 </div>
