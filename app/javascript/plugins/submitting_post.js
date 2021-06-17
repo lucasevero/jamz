@@ -6,7 +6,7 @@ const submittingPost = () => {
   //   
   // })
   const post = document.querySelector('#new_post');
-  if(post){
+  if(post) {
     post.addEventListener('submit', (event) => {
       event.preventDefault();
       document.querySelector('body').style.cursor = "wait"

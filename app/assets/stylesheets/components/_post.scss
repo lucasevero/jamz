@@ -101,3 +101,17 @@ iframe {
   width: auto !important;
   height: 600px;
 }
+
+@media (max-width: 1575px) {
+  /* For a screen < 960px, this CSS will be read */
+  .tall-image {
+    width: 100%;
+    max-height: 1000px;
+  }
+
+  .tall-video {
+    width: 100%;
+    max-height: 1000px;
+  }
+}
+

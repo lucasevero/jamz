@@ -31,12 +31,6 @@
               <div class="container px-3 d-flex justify-content-around border-0">
                   <div id="new-img">
                     <%= cl_image_tag display_photo(current_user), aspect_ratio: 1, crop: "fill" , class: "avatar-large", id: "preview-photo" %>
-                    <p class="text-center">New</p>
-                  </div>
-
-                  <div id="current-img">
-                    <%= cl_image_tag display_photo(current_user), aspect_ratio: 1, crop: "fill" , class: "avatar-large" %>
-                    <p class="text-center">Current</p>
                   </div>
 
               </div>
