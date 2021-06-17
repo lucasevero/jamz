@@ -61,6 +61,8 @@ import { easterEgg } from "../channels/jamzOnline";
 
 import { submittingPost } from "../plugins/submitting_post";
 
+import { loadDynamicBannerText } from "../plugins/banner_typed";
+
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -69,9 +71,6 @@ document.addEventListener('turbolinks:load', () => {
   
 
   initAutocomplete();
-
-
-  initNavbar();
 
   initChatroomCable();
 
@@ -96,5 +95,9 @@ document.addEventListener('turbolinks:load', () => {
   displayPreview();
 
   submittingPost();
+
+  loadDynamicBannerText();
+  
+  initNavbar();
 
 });
