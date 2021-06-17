@@ -24,7 +24,7 @@
         </div>
         <div class="post-images text-center">
           <% post.photos.each do |photo| %>
-            <% if photo.blob.content_type == "video/mp4" %>
+            <% if photo.blob.video? %>
               <%= cl_video_tag "#{photo.key}", controls: true, class: "video-post" %>
             <% else %>
               <%= cl_image_tag "#{photo.key}", class: "img-post" %>
