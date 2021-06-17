@@ -21,3 +21,25 @@
 .chat-action {
   cursor: pointer;
 }
+
+#chat-target {
+  height: 65vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+#chat-target::-webkit-scrollbar{
+  width: 6px;
+}
+
+#chat-target::-webkit-scrollbar-thumb{
+  background: #a23e48b9;
+  border-radius: 16px;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  &:hover{
+    background: #a23e48d9;
+  }
+}
