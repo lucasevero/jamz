@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @post = Post.new
-    @posts = @user.posts
+    @posts = @user.posts.order(updated_at: :desc)
     @chat_memberships = ChatMembership.where(user: current_user)
     authorize @user
   end
