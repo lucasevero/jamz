@@ -57,6 +57,8 @@ import { openChat } from '../chat/open_chat'
 
 import { previewUserPhoto } from "../plugins/preview_user_photo";
 
+import { submittingPost } from "../plugins/submitting_post";
+
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -86,5 +88,6 @@ document.addEventListener('turbolinks:load', () => {
 
   displayPreview();
 
+  submittingPost();
 
 });
