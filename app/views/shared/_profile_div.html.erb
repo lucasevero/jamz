@@ -1,9 +1,15 @@
 <div class="profile-div">
-  <div class="gear_wheel_div">
-    <%= link_to edit_user_registration_path do %>
-      <%= image_tag 'gear_wheel.svg', id: "gear_wheel" %>
-    <% end %>
-  </div>
+  <% if params[:id].to_i == current_user.id %>
+    <div class="gear_wheel_div">
+      <%= link_to edit_user_registration_path do %>
+        <%= image_tag 'gear_wheel.svg', id: "gear_wheel" %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="gear_wheel_div">
+      <%= image_tag '' %>
+    </div>
+  <% end %>
   <div id="profile-img">
     <%= cl_image_tag display_photo(@user), aspect_ratio: 1, crop: :fill, class: "avatar-large" %>
   </div>
