@@ -57,12 +57,18 @@ import { openChat } from '../chat/open_chat'
 
 import { previewUserPhoto } from "../plugins/preview_user_photo";
 
+import { easterEgg } from "../channels/jamzOnline";
+
 import { submittingPost } from "../plugins/submitting_post";
 
 import { loadDynamicBannerText } from "../plugins/banner_typed";
 
 
+
 document.addEventListener('turbolinks:load', () => {
+  
+  easterEgg()
+  
 
   initAutocomplete();
 
